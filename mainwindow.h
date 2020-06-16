@@ -15,6 +15,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_tableWidget_cellActivated(int row, int column);
+
 private:
     Ui::MainWindow *ui;
 };

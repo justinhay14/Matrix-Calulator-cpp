@@ -13,3 +13,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_tableWidget_cellActivated(int row, int column)
+{
+
+}
