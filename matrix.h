@@ -15,6 +15,9 @@ public:
     int get_rows() {
         return rows;
     }
+    int get_columns() {
+        return columns;
+    }
     matrix();
 };
 
