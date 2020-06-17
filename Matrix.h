@@ -5,7 +5,7 @@
 
 using std::vector;
 
-class matrix
+class Matrix
 {
 private:
     int rows;
@@ -18,7 +18,24 @@ public:
     int get_columns() {
         return columns;
     }
-    matrix();
+    Matrix add(Matrix term) {
+        Matrix sum = term;
+        return sum;
+    }
+    Matrix subtract(Matrix term) {
+        Matrix difference = term;
+        return difference;
+    }
+    Matrix scalar_multiply(double scalar) {
+        return Matrix();
+    }
+    Matrix determinant() {
+        return Matrix();
+    }
+    Matrix multiply() {
+        return Matrix();
+    }
+    Matrix();
 };
 
 #endif // MATRIX_H
