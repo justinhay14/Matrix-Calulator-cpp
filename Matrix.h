@@ -31,7 +31,15 @@ public:
         return sum;
     }
     Matrix subtract(Matrix term) {
-        Matrix difference = term;
+        if ((rows != term.get_rows()) || (columns != term.get_columns())) {
+            return Matrix();
+        }
+        Matrix difference = Matrix(rows, columns, grid);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                difference.grid[i][j] = grid[i][j] - term.grid[i][j];
+            }
+        }
         return difference;
     }
     Matrix scalar_multiply(double scalar) {
