@@ -27,7 +27,13 @@ public:
         return difference;
     }
     Matrix scalar_multiply(double scalar) {
-        return Matrix();
+        Matrix product;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                product.grid[i][j] = grid[i][j] * scalar;
+            }
+        }
+        return product;
     }
     Matrix determinant() {
         return Matrix();
