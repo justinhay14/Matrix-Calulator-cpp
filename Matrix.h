@@ -19,7 +19,15 @@ public:
         return columns;
     }
     Matrix add(Matrix term) {
-        Matrix sum = term;
+        if ((rows != term.get_rows()) || (columns != term.get_columns())) {
+            return Matrix();
+        }
+        Matrix sum = Matrix(rows, columns, grid);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                sum.grid[i][j] = grid[i][j] + term.grid[i][j];
+            }
+        }
         return sum;
     }
     Matrix subtract(Matrix term) {
@@ -42,6 +50,7 @@ public:
         return Matrix();
     }
     Matrix();
+    Matrix(int rows, int columns, vector<vector<double>> grid);
 };
 
 #endif // MATRIX_H
