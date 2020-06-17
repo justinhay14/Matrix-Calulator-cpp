@@ -1,9 +1,12 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 #include <stdlib.h>
+#include <iostream>
 #include <vector>
 
 using std::vector;
+using std::endl;
+using std::cout;
 
 class Matrix
 {
@@ -56,6 +59,14 @@ public:
     }
     Matrix multiply() {
         return Matrix();
+    }
+    void print_matrix() {
+    	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < columns; j++) {
+			cout << grid[i][j] << " ";
+		}
+		cout << endl;
+	}
     }
     Matrix();
     Matrix(int rows, int columns, vector<vector<double>> grid);

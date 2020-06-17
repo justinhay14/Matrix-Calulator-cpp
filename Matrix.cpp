@@ -1,4 +1,7 @@
 #include "Matrix.h"
+#include <iostream>
+
+using namespace std;
 
 Matrix::Matrix()
 {
@@ -10,4 +13,8 @@ Matrix::Matrix(int rows, int columns, vector<vector<double>> grid) {
     this->rows = rows;
     this->columns = columns;
     this->grid = grid;
+}
+
+int main() {
+	cout << "printing\n";
 }
