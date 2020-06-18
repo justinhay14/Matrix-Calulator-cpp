@@ -70,6 +70,7 @@ public:
     }
     Matrix();
     Matrix(int rows, int columns, vector<vector<double>> grid);
+    ~Matrix();
 };
 
 #endif // MATRIX_H
