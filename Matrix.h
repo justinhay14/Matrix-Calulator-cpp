@@ -21,6 +21,7 @@ public:
     int get_columns() {
         return columns;
     }
+    // works
     Matrix add(Matrix term) {
         if ((rows != term.get_rows()) || (columns != term.get_columns())) {
             return Matrix();
@@ -33,6 +34,7 @@ public:
         }
         return sum;
     }
+    // works
     Matrix subtract(Matrix term) {
         if ((rows != term.get_rows()) || (columns != term.get_columns())) {
             return Matrix();
@@ -45,8 +47,9 @@ public:
         }
         return difference;
     }
+    // works
     Matrix scalar_multiply(double scalar) {
-        Matrix product;
+        Matrix product = Matrix(rows, columns, grid);
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 product.grid[i][j] = grid[i][j] * scalar;
@@ -57,10 +60,13 @@ public:
     Matrix determinant() {
         return Matrix();
     }
-    Matrix multiply() {
+    Matrix multiply(Matrix factor) {
+        if (columns != factor.get_rows()) {
+            return Matrix();
+        }
         return Matrix();
     }
-    void print_matrix() {
+    void print() {
     	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < columns; j++) {
 			cout << grid[i][j] << " ";

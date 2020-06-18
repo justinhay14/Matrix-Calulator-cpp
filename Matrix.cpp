@@ -16,11 +16,23 @@ Matrix::Matrix(int rows, int columns, vector<vector<double>> grid) {
 }
 Matrix::~Matrix() {
     for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            grid[i][j] = 0;
+        }
         grid[i].clear();
+        cout << grid[i].capacity() << "\n";
     }
     grid.clear();
+    cout << grid.capacity() << "\n";
 }
 
 int main() {
-	cout << "printing\n";
+    vector<vector<double>> vect{{1,2}, {0, 3}};
+    Matrix A = Matrix(2, 2,vect);
+    Matrix B = Matrix(2, 2,vect);
+    A.print();
+    Matrix C = A.scalar_multiply(2);
+    //A.~Matrix();
+    C.print();
+    //B.~Matrix();
 }
