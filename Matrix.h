@@ -79,6 +79,18 @@ public:
         }
         return product;
     }
+    // works
+    Matrix transpose() {
+        vector<double> ans_row (rows, 0);
+        vector<vector<double>> ans_grid (columns, ans_row);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                ans_grid[j][i] = grid[i][j];
+            }
+        }
+        return Matrix(columns, rows, ans_grid);
+    }
+    // works
     void print() {
     	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < columns; j++) {
