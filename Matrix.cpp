@@ -29,8 +29,8 @@ Matrix::~Matrix() {
 int main() {
     vector<vector<double>> vect{{1,2,3}, {4,5,6}};
     vector<vector<double>> vect1{{7,8},{9,10},{11,12}};
-    Matrix A = Matrix(2, 2,vect);
-    Matrix B = Matrix(2, 2,vect1);
+    Matrix A = Matrix(2, 3,vect);
+    Matrix B = Matrix(3, 2,vect1);
     //A.print();
     Matrix C = A.multiply(B);
     //A.~Matrix();
