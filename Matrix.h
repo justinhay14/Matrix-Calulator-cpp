@@ -64,7 +64,16 @@ public:
         if (columns != factor.get_rows()) {
             return Matrix();
         }
-        return Matrix();
+        vector<double> row_grid (factor.get_columns(), 0.0);
+        vector<vector<double>> prod_grid (rows, row_grid);
+        Matrix product = Matrix(rows, factor.get_columns(), prod_grid);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < factor.get_columns(); j++) {
+                for (int k = 0; k < columns; k++) {
+                    product.grid[i][j] += grid[i][k] * factor.grid[k][j];
+                }
+            }
+        }
     }
     void print() {
     	for (int i = 0; i < rows; i++) {
