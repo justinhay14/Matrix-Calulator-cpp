@@ -60,6 +60,7 @@ public:
     Matrix determinant() {
         return Matrix();
     }
+    // works
     Matrix multiply(Matrix factor) {
         if (columns != factor.get_rows()) {
             return Matrix();
