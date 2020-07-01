@@ -90,6 +90,12 @@ public:
         }
         return Matrix(columns, rows, ans_grid);
     }
+    Matrix rref() {
+        return Matrix();
+    }
+    Matrix inverse() {
+        return Matrix();
+    }
     // works
     void print() {
     	for (int i = 0; i < rows; i++) {
