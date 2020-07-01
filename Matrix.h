@@ -99,13 +99,16 @@ public:
             }
         }
         int lead = 0;
-        while (lead < (columns - 1)) {
+        while (lead < rows) {
             for (int i = 0; i < rows; i++) {
-                if (i != lead) {
-                    for (int j = 0; j < columns; j++) {
-                        ans_grid[i][j] = ans_grid[lead][lead] * ans_grid[i][j];
-                        ans_grid[i][lead] = ans_grid[i][lead] * ans_grid[lead][j];
-                        ans_grid[i][j] = ans_grid[i][j] - ans_grid[i][lead];
+                double a = ans_grid[lead][lead];
+                double b = ans_grid[i][lead] / ans_grid[lead][lead];
+                for (int j = 0; j < columns; j++) {
+                    if (i == lead) {
+                        ans_grid[i][j] /= a;
+                    }
+                    else {
+                        ans_grid[i][j] -= ans_grid[lead][j] * b;
                     }
                 }
             }
