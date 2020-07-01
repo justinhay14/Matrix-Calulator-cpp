@@ -91,7 +91,27 @@ public:
         return Matrix(columns, rows, ans_grid);
     }
     Matrix rref() {
-        return Matrix();
+        vector<double> ans_row (columns, 0);
+        vector<vector<double>> ans_grid (rows, ans_row);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                ans_grid[i][j] = grid[i][j];
+            }
+        }
+        int lead = 0;
+        while (lead < (columns - 1)) {
+            for (int i = 0; i < rows; i++) {
+                if (i != lead) {
+                    for (int j = 0; j < columns; j++) {
+                        ans_grid[i][j] = ans_grid[lead][lead] * ans_grid[i][j];
+                        ans_grid[i][lead] = ans_grid[i][lead] * ans_grid[lead][j];
+                        ans_grid[i][j] = ans_grid[i][j] - ans_grid[i][lead];
+                    }
+                }
+            }
+            lead++;
+        }
+        return Matrix(rows, columns, ans_grid);
     }
     Matrix inverse() {
         return Matrix();
