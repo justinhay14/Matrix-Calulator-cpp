@@ -106,14 +106,14 @@ public:
         int lead = 0;
         while (lead < rows) {
             for (int i = 0; i < rows; i++) {
-                double a = ans_grid[lead][lead];
-                double b = ans_grid[i][lead] / ans_grid[lead][lead];
+                double div = ans_grid[lead][lead];
+                double fact = ans_grid[i][lead] / ans_grid[lead][lead];
                 for (int j = 0; j < columns; j++) {
                     if (i == lead) {
-                        ans_grid[i][j] /= a;
+                        ans_grid[i][j] /= div;
                     }
                     else {
-                        ans_grid[i][j] -= ans_grid[lead][j] * b;
+                        ans_grid[i][j] -= ans_grid[lead][j] * fact;
                     }
                 }
             }
@@ -121,6 +121,7 @@ public:
         }
         return Matrix(rows, columns, ans_grid);
     }
+    // works
     Matrix inverse() {
         vector<double> manip_row (2 * columns, 0);
         vector<vector<double>> manip_grid (rows, manip_row);
