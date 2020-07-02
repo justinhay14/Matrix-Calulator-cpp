@@ -64,6 +64,9 @@ public:
         return product;
     }
     Matrix determinant() {
+        if (rows != columns) {
+            return Matrix();
+        }
         return Matrix();
     }
     // works
