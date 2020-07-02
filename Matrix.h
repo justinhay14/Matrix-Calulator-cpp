@@ -139,7 +139,11 @@ public:
                 }
             }
         }
-        return Matrix();
+        manip.set_columns(columns);
+        for (int i = 0; i < rows; i++) {
+            manip.grid[i].erase(manip.grid[i].begin(), manip.grid[i].begin() + columns);
+        }
+        return manip;
     }
     // works
     void print() {

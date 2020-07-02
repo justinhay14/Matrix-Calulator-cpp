@@ -20,9 +20,11 @@ Matrix::~Matrix() {
             grid[i][j] = 0;
         }
         grid[i].clear();
+        //grid[0].~vector();
         //cout << grid[i].capacity() << "\n";
     }
     grid.clear();
+    //grid.~vector();
     //cout << grid.capacity() << "\n";
 }
 
