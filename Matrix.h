@@ -168,9 +168,7 @@ public:
             }
         }
         Matrix manip = Matrix(rows, 2 * columns, manip_grid);
-        //manip.print();
         manip = manip.rref();
-        //manip.print();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if ((manip.grid[i][j] != 0 && i != j) || (manip.grid[i][j] != 1 && i == j)) {
@@ -179,7 +177,6 @@ public:
                 }
             }
         }
-        //cout << "passed\n";
         manip.set_columns(columns);
         for (int i = 0; i < rows; i++) {
             manip.grid[i].erase(manip.grid[i].begin(), manip.grid[i].begin() + columns);

@@ -20,16 +20,10 @@ Matrix::~Matrix() {
             grid[i][j] = 0;
         };
         grid[i].clear();
-        //cout << "cleared row\n";
         grid[i].shrink_to_fit();
-        //grid[0].~vector();
-        //cout << grid[i].capacity() << "\n";
     }
     grid.resize(0);
-    //cout << grid.capacity() << endl;
     grid.shrink_to_fit();
-    //grid.~vector();
-    //cout << grid.capacity() << "\n";
 }
 
 int main() {
