@@ -73,9 +73,7 @@ public:
                 for (int k = 0; k < columns; k++) {
                     product.grid[i][j] += grid[i][k] * factor.grid[k][j];
                 }
-                //cout << product.grid[i][j] << " ";
             }
-            //cout << "\n";
         }
         return product;
     }
@@ -90,6 +88,7 @@ public:
         }
         return Matrix(columns, rows, ans_grid);
     }
+    // works
     Matrix rref() {
         vector<double> ans_row (columns, 0);
         vector<vector<double>> ans_grid (rows, ans_row);
@@ -122,11 +121,11 @@ public:
     // works
     void print() {
     	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < columns; j++) {
-			cout << grid[i][j] << " ";
-		}
-		cout << endl;
-	}
+            for (int j = 0; j < columns; j++) {
+                cout << grid[i][j] << " ";
+            }
+            cout << endl;
+        }
     }
     Matrix();
     Matrix(int rows, int columns, vector<vector<double>> grid);
