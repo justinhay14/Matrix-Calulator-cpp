@@ -21,6 +21,12 @@ public:
     int get_columns() {
         return columns;
     }
+    void set_rows(int rows) {
+        this->rows = rows;
+    }
+    void set_columns(int columns) {
+        this->columns = columns;
+    }
     // works
     Matrix add(Matrix term) {
         if ((rows != term.get_rows()) || (columns != term.get_columns())) {
@@ -116,6 +122,23 @@ public:
         return Matrix(rows, columns, ans_grid);
     }
     Matrix inverse() {
+        vector<double> manip_row (2 * columns, 0);
+        vector<vector<double>> manip_grid (rows, manip_row);
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                manip_grid[i][j] = grid[i][j];
+            }
+        }
+        Matrix manip = Matrix(rows, 2 * columns, manip_grid);
+        manip.rref();
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (manip_grid[i][j] != 0) {
+                    manip.~Matrix();
+                    return Matrix();
+                }
+            }
+        }
         return Matrix();
     }
     // works
