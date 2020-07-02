@@ -121,20 +121,31 @@ public:
         }
         return Matrix(rows, columns, ans_grid);
     }
-    /*Matrix inverse() {
+    Matrix inverse() {
         vector<double> manip_row (2 * columns, 0);
         vector<vector<double>> manip_grid (rows, manip_row);
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                manip_grid[i][j] = grid[i][j];
+            for (int j = 0; j < 2 * columns; j++) {
+
+                if (j >= columns && j - columns == i) {
+                    manip_grid[i][j] = 1;
+                }
+                else if (j >= columns) {
+                    manip_grid[i][j] = 0;
+                }
+                else {
+                    manip_grid[i][j] = grid[i][j];
+                }
             }
         }
         Matrix manip = Matrix(rows, 2 * columns, manip_grid);
-        manip.rref();
+        manip.print();
+        manip = manip.rref();
+        manip.print();
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (manip_grid[i][j] != 0) {
-                    manip.~Matrix();
+                if (manip.grid[i][j] != 0) {
+                    //manip.~Matrix();
                     return Matrix();
                 }
             }
@@ -146,7 +157,7 @@ public:
             manip.grid[i].shrink_to_fit();
         }
         return manip;
-    }*/
+    }
     // works
     void print() {
     	for (int i = 0; i < rows; i++) {
