@@ -14,7 +14,7 @@ private:
     int rows;
     int columns;
 public:
-    vector<vector<double> > grid;
+    vector<vector<double>> grid;
     int get_rows() {
         return rows;
     }
@@ -121,7 +121,7 @@ public:
         }
         return Matrix(rows, columns, ans_grid);
     }
-    Matrix inverse() {
+    /*Matrix inverse() {
         vector<double> manip_row (2 * columns, 0);
         vector<vector<double>> manip_grid (rows, manip_row);
         for (int i = 0; i < rows; i++) {
@@ -139,12 +139,14 @@ public:
                 }
             }
         }
+        cout << "passed\n";
         manip.set_columns(columns);
         for (int i = 0; i < rows; i++) {
             manip.grid[i].erase(manip.grid[i].begin(), manip.grid[i].begin() + columns);
+            manip.grid[i].shrink_to_fit();
         }
         return manip;
-    }
+    }*/
     // works
     void print() {
     	for (int i = 0; i < rows; i++) {

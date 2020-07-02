@@ -18,24 +18,29 @@ Matrix::~Matrix() {
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             grid[i][j] = 0;
-        }
+        };
         grid[i].clear();
+        //cout << "cleared row\n";
+        grid[i].shrink_to_fit();
         //grid[0].~vector();
         //cout << grid[i].capacity() << "\n";
     }
-    grid.clear();
+    grid.resize(0);
+    //cout << grid.capacity() << endl;
+    grid.shrink_to_fit();
     //grid.~vector();
     //cout << grid.capacity() << "\n";
 }
 
 int main() {
-    vector<vector<double>> vect{{1,2, 0}, {3,4, 2}, {2, 7, 8}};
+    vector<vector<double>> vect{{1,0, 0}, {0,1, 0}, {0, 0, 1}};
     //vector<vector<double>> vect1{{7,8},{9,10},{11,12}};
     Matrix A = Matrix(3, 3,vect);
     //Matrix B = Matrix(3, 2,vect1);
     //A.print();
     Matrix C = A.rref();
-    A.~Matrix();
+    //A.~Matrix();
     C.print();
+    //C.~Matrix();
     //B.~Matrix();
 }
