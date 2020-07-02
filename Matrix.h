@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+#include <math.h>
 
 using std::vector;
 using std::endl;
@@ -63,11 +64,35 @@ public:
         }
         return product;
     }
-    Matrix determinant() {
+    double determinant() {
         if (rows != columns) {
-            return Matrix();
+            return 0xffffffff;
         }
-        return Matrix();
+        double ans = 0;
+        vector<double> row (columns, 0);
+        vector<vector<double>> sub_grid (rows - 1, vector<double>(columns - 1, 0));
+        Matrix sub = Matrix(rows - 1, columns - 1, sub_grid);
+        if (rows == 2) {
+            return grid[0][0] * grid[1][1] - grid[1][0] * grid[0][1];
+        }
+        else {
+            for (int k = 0; k < rows; k++) {
+                int sub_row = 0;
+                for (int i = 1; i < rows; i++) {
+                    int sub_col = 0;
+                    for (int j = 0; j < rows; j++) {
+                        if (j == k) {
+                            continue;
+                        }
+                        sub.grid[sub_row][sub_col] = grid[i][j];
+                        sub_col++;
+                    }
+                    sub_row++;
+                }
+                ans = ans + (pow(-1, k) * grid[0][k] * sub.determinant());
+            }
+        }
+        return ans;
     }
     // works
     Matrix multiply(Matrix factor) {
