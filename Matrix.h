@@ -131,21 +131,20 @@ public:
                 ans_grid[i][j] = grid[i][j];
             }
         }
-        int lead = 0;
-        while (lead < rows) {
+
+        for (int k = 0; k < rows; k++) {
             for (int i = 0; i < rows; i++) {
-                double div = ans_grid[lead][lead];
-                double fact = ans_grid[i][lead] / ans_grid[lead][lead];
+                double div = ans_grid[k][k];
+                double fact = ans_grid[i][k] / ans_grid[k][k];
                 for (int j = 0; j < columns; j++) {
-                    if (i == lead) {
+                    if (i == k) {
                         ans_grid[i][j] /= div;
                     }
                     else {
-                        ans_grid[i][j] -= ans_grid[lead][j] * fact;
+                        ans_grid[i][j] -= ans_grid[k][j] * fact;
                     }
                 }
             }
-            lead++;
         }
         return Matrix(rows, columns, ans_grid);
     }
