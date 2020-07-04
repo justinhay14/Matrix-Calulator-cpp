@@ -64,6 +64,7 @@ public:
         }
         return product;
     }
+    //works
     double determinant() {
         if (rows != columns) {
             return 0xffffffff;
