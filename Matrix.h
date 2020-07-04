@@ -64,10 +64,10 @@ public:
         }
         return product;
     }
-    //works
+    // works
     double determinant() {
         if (rows != columns) {
-            return 0xffffffff;
+            return 0;
         }
         double ans = 0;
         vector<double> row (columns, 0);
@@ -82,11 +82,10 @@ public:
                 for (int i = 1; i < rows; i++) {
                     int sub_col = 0;
                     for (int j = 0; j < rows; j++) {
-                        if (j == k) {
-                            continue;
+                        if (j != k) {
+                            sub.grid[sub_row][sub_col] = grid[i][j];
+                            sub_col++;
                         }
-                        sub.grid[sub_row][sub_col] = grid[i][j];
-                        sub_col++;
                     }
                     sub_row++;
                 }
