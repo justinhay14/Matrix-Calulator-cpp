@@ -70,7 +70,6 @@ public:
             return 0;
         }
         double ans = 0;
-        vector<double> row (columns, 0);
         vector<vector<double>> sub_grid (rows - 1, vector<double>(columns - 1, 0));
         Matrix sub = Matrix(rows - 1, columns - 1, sub_grid);
         if (rows == 2) {
@@ -99,8 +98,7 @@ public:
         if (columns != factor.get_rows()) {
             return Matrix();
         }
-        vector<double> row_grid (factor.get_columns(), 0.0);
-        vector<vector<double>> prod_grid (rows, row_grid);
+        vector<vector<double>> prod_grid (rows, vector<double> (factor.get_columns(), 0.0));
         Matrix product = Matrix(rows, factor.get_columns(), prod_grid);
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -113,8 +111,7 @@ public:
     }
     // works
     Matrix transpose() {
-        vector<double> ans_row (rows, 0);
-        vector<vector<double>> ans_grid (columns, ans_row);
+        vector<vector<double>> ans_grid (columns, vector<double> (rows, 0));
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 ans_grid[j][i] = grid[i][j];
@@ -124,8 +121,7 @@ public:
     }
     // works
     Matrix rref() {
-        vector<double> ans_row (columns, 0);
-        vector<vector<double>> ans_grid (rows, ans_row);
+        vector<vector<double>> ans_grid (rows, vector<double> (columns, 0));
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 ans_grid[i][j] = grid[i][j];
@@ -150,8 +146,7 @@ public:
     }
     // works
     Matrix inverse() {
-        vector<double> manip_row (2 * columns, 0);
-        vector<vector<double>> manip_grid (rows, manip_row);
+        vector<vector<double>> manip_grid (rows, vector<double> (2 * columns, 0));
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < 2 * columns; j++) {
 

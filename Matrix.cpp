@@ -28,14 +28,14 @@ Matrix::~Matrix() {
 
 int main() {
     vector<vector<double>> vect{{-3, 1, 2}, {5, 0, 7}, {3, 6, 5}};
-    //vector<vector<double>> vect1{{7,8},{9,10},{11,12}};
+    vector<vector<double>> vect1{{7,8},{9,10},{11,12}};
     Matrix A = Matrix(3, 3,vect);
-    //Matrix B = Matrix(3, 2,vect1);
+    Matrix B = Matrix(3, 2,vect1);
     //A.print();
-    //Matrix C = A.inverse();
+    Matrix C = A.multiply(B);
     //A.~Matrix();
-    //C.print();
+    C.print();
     //C.~Matrix();
     //B.~Matrix();
-    cout << A.determinant() << endl;
+    //cout << A.determinant() << endl;
 }
