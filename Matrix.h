@@ -166,7 +166,6 @@ public:
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if ((manip.grid[i][j] != 0 && i != j) || (manip.grid[i][j] != 1 && i == j)) {
-                    //manip.~Matrix();
                     return Matrix();
                 }
             }
@@ -177,6 +176,22 @@ public:
             manip.grid[i].shrink_to_fit();
         }
         return manip;
+    }
+    Matrix power(int exp) {
+        if (exp < 0 || rows != columns)
+            return Matrix();
+        else if (exp == 0) {
+            vector<vector<double>> id_grid (rows, vector<double> (columns, 0));
+            for (int i = 0; i < rows; i++) {
+                id_grid[i][i] = 1;
+            }
+            return Matrix(rows, columns, id_grid);
+        }
+        Matrix answer = Matrix(rows, columns, grid);
+        for (int i = 0; i < exp; i++) {
+            answer = answer.multiply(answer);
+        }
+        return answer;
     }
     // works
     void print() {
