@@ -177,6 +177,7 @@ public:
         }
         return manip;
     }
+    // works
     Matrix power(int exp) {
         if (exp < 0 || rows != columns)
             return Matrix();
@@ -188,7 +189,7 @@ public:
             return Matrix(rows, columns, id_grid);
         }
         Matrix answer = Matrix(rows, columns, grid);
-        for (int i = 0; i < exp; i++) {
+        for (int i = 1; i < exp; i++) {
             answer = answer.multiply(answer);
         }
         return answer;
