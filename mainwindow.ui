@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
-    <height>468</height>
+    <width>1012</width>
+    <height>622</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -484,6 +484,16 @@
      <string>2</string>
     </property>
    </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>320</y>
+      <width>541</width>
+      <height>261</height>
+     </rect>
+    </property>
+   </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
@@ -607,30 +617,39 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>952</width>
+     <width>1012</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>pushButton_13</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>pushButton_6</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>pushButton_8</tabstop>
+  <tabstop>comboBox_2</tabstop>
+  <tabstop>pushButton_9</tabstop>
+  <tabstop>pushButton_10</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton_11</tabstop>
+  <tabstop>lineEdit_2</tabstop>
+  <tabstop>pushButton_12</tabstop>
+  <tabstop>lineEdit_4</tabstop>
+  <tabstop>pushButton_3</tabstop>
+  <tabstop>pushButton_5</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>pushButton_14</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>comboBox_3</tabstop>
+  <tabstop>tableWidget_2</tabstop>
+ </tabstops>
  <resources/>
  <connections>
-  <connection>
-   <sender>pushButton_3</sender>
-   <signal>clicked()</signal>
-   <receiver>tableWidget</receiver>
-   <slot>clearContents()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>102</x>
-     <y>215</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>122</x>
-     <y>142</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>pushButton_4</sender>
    <signal>clicked()</signal>
@@ -647,5 +666,24 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>clearContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
+ <slots>
+  <slot>determinant()</slot>
+ </slots>
 </ui>
