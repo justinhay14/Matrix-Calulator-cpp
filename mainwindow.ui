@@ -14,49 +14,6 @@
    <string>Matrix Calculator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>130</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Calculate</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBox">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>90</y>
-      <width>69</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>A + B</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>A - B</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>AB</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>BA</string>
-     </property>
-    </item>
-   </widget>
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
@@ -337,101 +294,10 @@
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>50</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Swap</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>200</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>200</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Clear</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_5">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>200</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_6">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>200</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>-</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_7">
-    <property name="geometry">
-     <rect>
-      <x>680</x>
-      <y>200</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_8">
-    <property name="geometry">
-     <rect>
-      <x>780</x>
-      <y>200</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>-</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
-      <x>38</x>
+      <x>80</x>
       <y>240</y>
       <width>121</width>
       <height>22</height>
@@ -474,7 +340,7 @@
    <widget class="QPushButton" name="pushButton_10">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>210</x>
       <y>240</y>
       <width>75</width>
       <height>23</height>
@@ -539,7 +405,7 @@
    <widget class="QComboBox" name="comboBox_3">
     <property name="geometry">
      <rect>
-      <x>578</x>
+      <x>570</x>
       <y>230</y>
       <width>121</width>
       <height>22</height>
@@ -618,6 +484,122 @@
      <string>2</string>
     </property>
    </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>180</y>
+      <width>239</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string>Clear</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>180</y>
+      <width>239</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>Clear</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="text">
+        <string>+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="text">
+        <string>-</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>50</y>
+      <width>77</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Swap</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>A + B</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>A - B</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>AB</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>BA</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Calculate</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
@@ -632,5 +614,38 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>clearContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget_2</receiver>
+   <slot>clearContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>655</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>653</x>
+     <y>148</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
