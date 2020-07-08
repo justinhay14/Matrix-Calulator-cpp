@@ -22,12 +22,14 @@ void MainWindow::on_tableWidget_cellActivated(int row, int column)
 }
 
 QString to_string(Matrix A) {
-    QString ans = "[";
+    QString ans = "";
     for (int i = 0; i < A.get_rows(); i++) {
-        for (int j = 0; i < A.get_columns(); i++) {
-            ans += A.grid[i][j];
+        ans += "[";
+        for (int j = 0; j < A.get_columns(); j++) {
+            QString base = "";
+            ans += base.setNum(A.grid[i][j]);
             if (j == A.get_columns() - 1)
-                ans += "]";
+                ans += "]\n";
             else
                 ans += " ";
         }
@@ -56,6 +58,16 @@ void MainWindow::on_pushButton_10_clicked()
         QString text = "";
         text.setNum(answer);
         ui->textBrowser->setText(text);
+    }
+    else if (function.startsWith("Inverse")) {
+        vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
+        for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
+            for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
+                grid[i][j] = ui->tableWidget->item(i, j)->text().toDouble();
+            }
+        }
+        Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).inverse();
+        ui->textBrowser->setText(to_string(answer));
     }
 }
 
