@@ -51,10 +51,30 @@ void MainWindow::on_pushButton_6_clicked()
 {
     if (ui->tableWidget->rowCount() != 1) {
         ui->tableWidget->setRowCount(ui->tableWidget->rowCount() - 1);
-        ui->tableWidget->insertRow(ui->tableWidget->rowCount() - 1);
+        ui->tableWidget->removeRow(ui->tableWidget->rowCount());
     }
     if (ui->tableWidget->columnCount() != 1) {
         ui->tableWidget->setColumnCount(ui->tableWidget->columnCount() - 1);
-        ui->tableWidget->insertColumn(ui->tableWidget->columnCount() - 1);
+        ui->tableWidget->removeColumn(ui->tableWidget->columnCount());
+    }
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    ui->tableWidget_2->setRowCount(ui->tableWidget_2->rowCount() + 1);
+    ui->tableWidget_2->setColumnCount(ui->tableWidget_2->columnCount() + 1);
+    ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount() + 1);
+    ui->tableWidget_2->insertColumn(ui->tableWidget_2->columnCount() + 1);
+}
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    if (ui->tableWidget_2->rowCount() != 1) {
+        ui->tableWidget_2->setRowCount(ui->tableWidget_2->rowCount() - 1);
+        ui->tableWidget_2->removeRow(ui->tableWidget_2->rowCount());
+    }
+    if (ui->tableWidget_2->columnCount() != 1) {
+        ui->tableWidget_2->setColumnCount(ui->tableWidget_2->columnCount() - 1);
+        ui->tableWidget_2->removeColumn(ui->tableWidget_2->columnCount());
     }
 }
