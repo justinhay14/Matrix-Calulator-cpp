@@ -21,6 +21,20 @@ void MainWindow::on_tableWidget_cellActivated(int row, int column)
 
 }
 
+QString to_string(Matrix A) {
+    QString ans = "[";
+    for (int i = 0; i < A.get_rows(); i++) {
+        for (int j = 0; i < A.get_columns(); i++) {
+            ans += A.grid[i][j];
+            if (j == A.get_columns() - 1)
+                ans += "]";
+            else
+                ans += " ";
+        }
+    }
+    return ans;
+}
+
 void MainWindow::on_pushButton_2_clicked()
 {
     QTableWidget *table_ptr = ui->tableWidget;
