@@ -18,3 +18,28 @@ void MainWindow::on_tableWidget_cellActivated(int row, int column)
 {
 
 }
+
+void MainWindow::on_pushButton_2_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+
+}

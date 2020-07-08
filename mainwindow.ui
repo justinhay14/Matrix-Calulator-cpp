@@ -18,11 +18,14 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>50</y>
-      <width>321</width>
-      <height>121</height>
+      <y>10</y>
+      <width>281</width>
+      <height>161</height>
      </rect>
     </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>39</number>
+    </attribute>
     <row>
      <property name="text">
       <string>1</string>
@@ -190,12 +193,15 @@
    <widget class="QTableWidget" name="tableWidget_2">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>50</y>
-      <width>321</width>
-      <height>121</height>
+      <x>600</x>
+      <y>10</y>
+      <width>251</width>
+      <height>161</height>
      </rect>
     </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>39</number>
+    </attribute>
     <row>
      <property name="text">
       <string>1</string>
@@ -676,7 +682,7 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>655</x>
-     <y>212</y>
+     <y>191</y>
     </hint>
     <hint type="destinationlabel">
      <x>653</x>
@@ -692,7 +698,7 @@ p, li { white-space: pre-wrap; }
    <hints>
     <hint type="sourcelabel">
      <x>102</x>
-     <y>215</y>
+     <y>194</y>
     </hint>
     <hint type="destinationlabel">
      <x>122</x>
