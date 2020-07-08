@@ -41,5 +41,20 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_5_clicked()
 {
+    ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
+    ui->tableWidget->setColumnCount(ui->tableWidget->columnCount() + 1);
+    ui->tableWidget->insertRow(ui->tableWidget->rowCount() + 1);
+    ui->tableWidget->insertColumn(ui->tableWidget->columnCount() + 1);
+}
 
+void MainWindow::on_pushButton_6_clicked()
+{
+    if (ui->tableWidget->rowCount() != 1) {
+        ui->tableWidget->setRowCount(ui->tableWidget->rowCount() - 1);
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount() - 1);
+    }
+    if (ui->tableWidget->columnCount() != 1) {
+        ui->tableWidget->setColumnCount(ui->tableWidget->columnCount() - 1);
+        ui->tableWidget->insertColumn(ui->tableWidget->columnCount() - 1);
+    }
 }
