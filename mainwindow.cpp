@@ -78,7 +78,38 @@ void MainWindow::on_pushButton_12_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
+    QString function = ui->comboBox->currentText();
+    vector<vector<double>> grid_a (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
+    for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
+            grid_a[i][j] = ui->tableWidget->item(i, j)->text().toDouble();
+        }
+    }
+    Matrix A = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid_a);
 
+    vector<vector<double>> grid_b (ui->tableWidget_2->rowCount(), vector<double>(ui->tableWidget_2->columnCount(), 0));
+    for (int i = 0; i < ui->tableWidget_2->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget_2->columnCount(); j++) {
+            grid_b[i][j] = ui->tableWidget_2->item(i, j)->text().toDouble();
+        }
+    }
+    Matrix B = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid_b);
+
+    if (function.startsWith("A + B")) {
+        ui->textBrowser->setText(to_string(A.add(B)));
+    }
+    else if (function.startsWith("A - B")) {
+        ui->textBrowser->setText(to_string(A.subtract(B)));
+    }
+    else if (function.startsWith("B - A")) {
+        ui->textBrowser->setText(to_string(B.subtract(A)));
+    }
+    else if (function.startsWith("AB")) {
+        ui->textBrowser->setText(to_string(A.multiply(B)));
+    }
+    else if (function.startsWith("BA")) {
+        ui->textBrowser->setText(to_string(B.multiply(A)));
+    }
 }
 // works
 void MainWindow::on_pushButton_5_clicked()
