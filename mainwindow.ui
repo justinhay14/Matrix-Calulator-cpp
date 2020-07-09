@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1012</width>
-    <height>622</height>
+    <width>920</width>
+    <height>634</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -649,6 +649,19 @@ p, li { white-space: pre-wrap; }
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_15">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>590</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
@@ -708,6 +721,22 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>122</x>
      <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_15</sender>
+   <signal>clicked()</signal>
+   <receiver>textBrowser</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>487</x>
+     <y>599</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>555</y>
     </hint>
    </hints>
   </connection>

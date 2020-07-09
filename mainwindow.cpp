@@ -47,28 +47,34 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_10_clicked()
 {
     QString function = ui->comboBox_2->currentText();
-    if (function.startsWith("Determinant")) {
-        vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
-        for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
-            for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
-                grid[i][j] = ui->tableWidget->item(i, j)->text().toDouble();
-            }
+    vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
+    for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
+            grid[i][j] = ui->tableWidget->item(i, j)->text().toDouble();
         }
+    }
+    if (function.startsWith("Determinant")) {
         double answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).determinant();
         QString text = "";
         text.setNum(answer);
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
-        ui->textBrowser->insertPlainText(text + "\n\n");
+        ui->textBrowser->insertPlainText("det(A) = " + text + "\n\n");
     }
     else if (function.startsWith("Inverse")) {
-        vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
-        for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
-            for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
-                grid[i][j] = ui->tableWidget->item(i, j)->text().toDouble();
-            }
-        }
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).inverse();
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText(to_string(answer) + "\n");
+    }
+    else if (function.startsWith("Transpose")) {
+        Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).transpose();
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText(to_string(answer) + "\n");
+    }
+    else if (function.startsWith("Reduced Row Echelon Form")) {
+        Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).rref();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText(to_string(answer) + "\n");
