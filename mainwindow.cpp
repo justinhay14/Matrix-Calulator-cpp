@@ -65,19 +65,19 @@ void MainWindow::on_pushButton_10_clicked()
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).inverse();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
-        ui->textBrowser->insertPlainText(to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("Inverse(A) = \n" + to_string(answer) + "\n");
     }
     else if (function.startsWith("Transpose")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).transpose();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
-        ui->textBrowser->insertPlainText(to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("Transpose(A) = \n" + to_string(answer) + "\n");
     }
     else if (function.startsWith("Reduced Row Echelon Form")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).rref();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
-        ui->textBrowser->insertPlainText(to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("rref(A) = \n" + to_string(answer) + "\n");
     }
 }
 
@@ -108,19 +108,19 @@ void MainWindow::on_pushButton_clicked()
     QTextCursor cursor = QTextCursor(ui->textBrowser->document());
     ui->textBrowser->setTextCursor(cursor);
     if (function.startsWith("A + B")) {
-        ui->textBrowser->insertPlainText(to_string(A.add(B)) + "\n");
+        ui->textBrowser->insertPlainText("A + B = \n" + to_string(A.add(B)) + "\n");
     }
     else if (function.startsWith("A - B")) {
-        ui->textBrowser->insertPlainText(to_string(A.subtract(B)) + "\n");
+        ui->textBrowser->insertPlainText("A - B = \n" + to_string(A.subtract(B)) + "\n");
     }
     else if (function.startsWith("B - A")) {
-        ui->textBrowser->insertPlainText(to_string(B.subtract(A)) + "\n");
+        ui->textBrowser->insertPlainText("B - A = \n" + to_string(B.subtract(A)) + "\n");
     }
     else if (function.startsWith("AB")) {
-        ui->textBrowser->insertPlainText(to_string(A.multiply(B)) + "\n");
+        ui->textBrowser->insertPlainText("AB = \n" + to_string(A.multiply(B)) + "\n");
     }
     else if (function.startsWith("BA")) {
-        ui->textBrowser->insertPlainText(to_string(B.multiply(A)) + "\n");
+        ui->textBrowser->insertPlainText("BA = \n" + to_string(B.multiply(A)) + "\n");
     }
 }
 // works

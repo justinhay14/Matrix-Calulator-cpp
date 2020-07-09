@@ -27,12 +27,12 @@ Matrix::~Matrix() {
 }
 
 /*int main() {
-    vector<vector<double>> vect{{-3, 1, 2}, {5, 0, 7}, {3, 6, 5}};
-    //vector<vector<double>> vect1{{7,8},{9,10},{11,12}};
-    Matrix A = Matrix(3, 3,vect);
-    //Matrix B = Matrix(3, 2,vect1);
+    vector<vector<double>> vect{{-3, 1, 2, 4}, {5, 0, 7, 7}, {3, 6, 5, 3}, {0, 0, 0, 0}};
+    vector<vector<double>> vect1(4, vector<double>(4, 0));
+    Matrix A = Matrix(4, 4,vect);
+    Matrix B = Matrix(4, 4,vect1);
     //A.print();
-    Matrix C = A.power(2);
+    Matrix C = A.add(B);
     //A.~Matrix();
     C.print();
     //C.~Matrix();
