@@ -57,7 +57,9 @@ void MainWindow::on_pushButton_10_clicked()
         double answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).determinant();
         QString text = "";
         text.setNum(answer);
-        ui->textBrowser->setText(text);
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText(text + "\n\n");
     }
     else if (function.startsWith("Inverse")) {
         vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
@@ -67,7 +69,9 @@ void MainWindow::on_pushButton_10_clicked()
             }
         }
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).inverse();
-        ui->textBrowser->setText(to_string(answer));
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText(to_string(answer) + "\n");
     }
 }
 
@@ -95,20 +99,22 @@ void MainWindow::on_pushButton_clicked()
     }
     Matrix B = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid_b);
 
+    QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+    ui->textBrowser->setTextCursor(cursor);
     if (function.startsWith("A + B")) {
-        ui->textBrowser->setText(to_string(A.add(B)));
+        ui->textBrowser->insertPlainText(to_string(A.add(B)) + "\n");
     }
     else if (function.startsWith("A - B")) {
-        ui->textBrowser->setText(to_string(A.subtract(B)));
+        ui->textBrowser->insertPlainText(to_string(A.subtract(B)) + "\n");
     }
     else if (function.startsWith("B - A")) {
-        ui->textBrowser->setText(to_string(B.subtract(A)));
+        ui->textBrowser->insertPlainText(to_string(B.subtract(A)) + "\n");
     }
     else if (function.startsWith("AB")) {
-        ui->textBrowser->setText(to_string(A.multiply(B)));
+        ui->textBrowser->insertPlainText(to_string(A.multiply(B)) + "\n");
     }
     else if (function.startsWith("BA")) {
-        ui->textBrowser->setText(to_string(B.multiply(A)));
+        ui->textBrowser->insertPlainText(to_string(B.multiply(A)) + "\n");
     }
 }
 // works
