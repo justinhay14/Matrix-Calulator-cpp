@@ -24,14 +24,14 @@ void MainWindow::on_tableWidget_cellActivated(int row, int column)
 QString to_string(Matrix A) {
     QString ans = "";
     for (int i = 0; i < A.get_rows(); i++) {
-        ans += "[";
+        //ans += "[";
         for (int j = 0; j < A.get_columns(); j++) {
             QString base = "";
             ans += base.setNum(A.grid[i][j]);
             if (j == A.get_columns() - 1)
-                ans += "]\n";
+                ans += "\n";
             else
-                ans += " ";
+                ans += "\t";
         }
     }
     return ans;
