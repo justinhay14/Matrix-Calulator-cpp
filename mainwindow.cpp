@@ -55,6 +55,14 @@ void MainWindow::on_pushButton_10_clicked()
         }
     }
     if (function.startsWith("Determinant")) {
+        if (ui->tableWidget->rowCount() == 1 && ui->tableWidget->columnCount() == 1) {
+            QString spec_case = "";
+            spec_case.setNum(grid[0][0]);
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("det(A) = " + spec_case + "\n\n");
+            return;
+        }
         double answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).determinant();
         QString text = "";
         text.setNum(answer);
