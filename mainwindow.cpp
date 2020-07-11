@@ -37,12 +37,6 @@ QString to_string(Matrix A) {
     return ans;
 }
 
-void MainWindow::on_pushButton_2_clicked()
-{
-    QTableWidget *table_ptr = ui->tableWidget;
-    ui->tableWidget = ui->tableWidget_2;
-    ui->tableWidget_2 = table_ptr;
-}
 
 void MainWindow::on_pushButton_10_clicked()
 {

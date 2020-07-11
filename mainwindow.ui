@@ -584,13 +584,6 @@ p, li { white-space: pre-wrap; }
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_2">
-       <property name="text">
-        <string>Swap</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QComboBox" name="comboBox">
        <item>
         <property name="text">
@@ -683,7 +676,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>pushButton_3</tabstop>
   <tabstop>pushButton_5</tabstop>
   <tabstop>pushButton_4</tabstop>
-  <tabstop>pushButton_2</tabstop>
   <tabstop>tableWidget</tabstop>
   <tabstop>pushButton_14</tabstop>
   <tabstop>pushButton</tabstop>
