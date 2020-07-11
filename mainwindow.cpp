@@ -44,7 +44,14 @@ void MainWindow::on_pushButton_10_clicked()
     vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
     for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
         for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
-            grid[i][j] = ui->tableWidget->item(i, j)->text().toDouble();
+            QString text = ui->tableWidget->item(i, j)->text();
+            if (text.compare("") == 0) {
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                ui->textBrowser->setTextCursor(cursor);
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                return;
+            }
+            grid[i][j] = text.toDouble();
         }
     }
     if (function.startsWith("Determinant")) {
@@ -86,7 +93,14 @@ void MainWindow::on_pushButton_clicked()
     vector<vector<double>> grid_a (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
     for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
         for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
-            grid_a[i][j] = ui->tableWidget->item(i, j)->text().toDouble();
+            QString text = ui->tableWidget->item(i, j)->text();
+            if (text.compare("") == 0) {
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                ui->textBrowser->setTextCursor(cursor);
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                return;
+            }
+            grid_a[i][j] = text.toDouble();
         }
     }
     Matrix A = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid_a);
@@ -94,7 +108,14 @@ void MainWindow::on_pushButton_clicked()
     vector<vector<double>> grid_b (ui->tableWidget_2->rowCount(), vector<double>(ui->tableWidget_2->columnCount(), 0));
     for (int i = 0; i < ui->tableWidget_2->rowCount(); i++) {
         for (int j = 0; j < ui->tableWidget_2->columnCount(); j++) {
-            grid_b[i][j] = ui->tableWidget_2->item(i, j)->text().toDouble();
+            QString text = ui->tableWidget_2->item(i, j)->text();
+            if (text.compare("") == 0) {
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                ui->textBrowser->setTextCursor(cursor);
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                return;
+            }
+            grid_b[i][j] = text.toDouble();
         }
     }
     Matrix B = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid_b);
