@@ -186,3 +186,25 @@ void MainWindow::on_pushButton_8_clicked()
         ui->tableWidget_2->removeColumn(ui->tableWidget_2->columnCount());
     }
 }
+
+void MainWindow::on_pushButton_9_clicked()
+{
+    QString function = ui->comboBox_2->currentText();
+    vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
+    for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
+            QString text = ui->tableWidget->item(i, j)->text();
+            if (text.compare("") == 0) {
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                ui->textBrowser->setTextCursor(cursor);
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                return;
+            }
+            grid[i][j] = text.toDouble();
+        }
+    }
+    Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).scalar_multiply(ui->lineEdit->text().toDouble());
+    QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+    ui->textBrowser->setTextCursor(cursor);
+    ui->textBrowser->insertPlainText("A = \n" + to_string(answer) + "\n");
+}
