@@ -193,17 +193,26 @@ void MainWindow::on_pushButton_9_clicked()
     vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
     for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
         for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
-            QString text = ui->tableWidget->item(i, j)->text();
-            if (text.compare("") == 0) {
+            bool satis = true;
+            double val = ui->tableWidget->item(i, j)->text().toDouble(&satis);
+            if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
                 return;
             }
-            grid[i][j] = text.toDouble();
+            grid[i][j] = val;
         }
     }
-    Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).scalar_multiply(ui->lineEdit->text().toDouble());
+    bool ok = true;
+    double scalar = ui->lineEdit->text().toDouble(&ok);
+    if (!ok) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+        return;
+    }
+    Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).scalar_multiply(scalar);
     QTextCursor cursor = QTextCursor(ui->textBrowser->document());
     ui->textBrowser->setTextCursor(cursor);
     ui->textBrowser->insertPlainText("A = \n" + to_string(answer) + "\n");
