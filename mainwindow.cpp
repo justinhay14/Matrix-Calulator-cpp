@@ -240,7 +240,7 @@ void MainWindow::on_pushButton_11_clicked()
         }
     }
     bool ok = true;
-    int exp = ui->lineEdit->text().toInt(&ok);
+    int exp = ui->lineEdit_2->text().toInt(&ok);
     if (!ok) {
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
