@@ -23,6 +23,9 @@
       <height>161</height>
      </rect>
     </property>
+    <property name="gridStyle">
+     <enum>Qt::SolidLine</enum>
+    </property>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>39</number>
     </attribute>
