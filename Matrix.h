@@ -28,7 +28,7 @@ public:
     void set_columns(int columns) {
         this->columns = columns;
     }
-    // works
+
     Matrix add(Matrix term) {
         if ((rows != term.get_rows()) || (columns != term.get_columns())) {
             return Matrix();
@@ -41,7 +41,7 @@ public:
         }
         return sum;
     }
-    // works
+
     Matrix subtract(Matrix term) {
         if ((rows != term.get_rows()) || (columns != term.get_columns())) {
             return Matrix();
@@ -54,7 +54,7 @@ public:
         }
         return difference;
     }
-    // works
+
     Matrix scalar_multiply(double scalar) {
         Matrix product = Matrix(rows, columns, grid);
         for (int i = 0; i < rows; i++) {
@@ -64,7 +64,7 @@ public:
         }
         return product;
     }
-    // works
+
     double determinant() {
         if (rows != columns) {
             return 0;
@@ -93,7 +93,7 @@ public:
         }
         return ans;
     }
-    // works
+
     Matrix multiply(Matrix factor) {
         if (columns != factor.get_rows()) {
             return Matrix();
@@ -109,7 +109,7 @@ public:
         }
         return product;
     }
-    // works
+
     Matrix transpose() {
         vector<vector<double>> ans_grid (columns, vector<double> (rows, 0));
         for (int i = 0; i < rows; i++) {
@@ -119,7 +119,7 @@ public:
         }
         return Matrix(columns, rows, ans_grid);
     }
-    // works
+
     Matrix rref() {
         vector<vector<double>> ans_grid (rows, vector<double> (columns, 0));
         for (int i = 0; i < rows; i++) {
@@ -144,7 +144,7 @@ public:
         }
         return Matrix(rows, columns, ans_grid);
     }
-    // works
+
     Matrix inverse() {
         vector<vector<double>> manip_grid (rows, vector<double> (2 * columns, 0));
         for (int i = 0; i < rows; i++) {
@@ -177,7 +177,7 @@ public:
         }
         return manip;
     }
-    // works
+
     Matrix power(int exp) {
         if (exp < 0 || rows != columns)
             return Matrix();
@@ -194,7 +194,7 @@ public:
         }
         return answer;
     }
-    // works
+
     void print() {
     	for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {

@@ -36,6 +36,8 @@ private slots:
 
     void on_pushButton_11_clicked();
 
+    void on_lineEdit_5_editingFinished();
+
 private:
     Ui::MainWindow *ui;
 };

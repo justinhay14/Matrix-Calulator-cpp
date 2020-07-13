@@ -255,3 +255,8 @@ void MainWindow::on_pushButton_11_clicked()
     empty = "^" + empty;
     ui->textBrowser->insertPlainText("A" + empty + " = \n" + to_string(answer) + "\n");
 }
+
+void MainWindow::on_lineEdit_5_editingFinished()
+{
+
+}
