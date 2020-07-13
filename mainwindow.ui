@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>920</width>
-    <height>634</height>
+    <width>923</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -401,8 +401,8 @@
    <widget class="QPushButton" name="pushButton_12">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>230</y>
+      <x>740</x>
+      <y>240</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -414,8 +414,8 @@
    <widget class="QComboBox" name="comboBox_3">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>230</y>
+      <x>600</x>
+      <y>240</y>
       <width>121</width>
       <height>22</height>
      </rect>
@@ -444,8 +444,8 @@
    <widget class="QLineEdit" name="lineEdit_3">
     <property name="geometry">
      <rect>
-      <x>720</x>
-      <y>290</y>
+      <x>750</x>
+      <y>300</y>
       <width>21</width>
       <height>20</height>
      </rect>
@@ -457,8 +457,8 @@
    <widget class="QPushButton" name="pushButton_13">
     <property name="geometry">
      <rect>
-      <x>620</x>
-      <y>260</y>
+      <x>650</x>
+      <y>270</y>
       <width>81</width>
       <height>23</height>
      </rect>
@@ -470,8 +470,8 @@
    <widget class="QPushButton" name="pushButton_14">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>290</y>
+      <x>640</x>
+      <y>300</y>
       <width>101</width>
       <height>23</height>
      </rect>
@@ -483,8 +483,8 @@
    <widget class="QLineEdit" name="lineEdit_4">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>260</y>
+      <x>740</x>
+      <y>270</y>
       <width>21</width>
       <height>20</height>
      </rect>
@@ -496,8 +496,8 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>320</y>
+      <x>180</x>
+      <y>340</y>
       <width>541</width>
       <height>261</height>
      </rect>
@@ -648,8 +648,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="pushButton_15">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>590</y>
+      <x>390</x>
+      <y>610</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -657,6 +657,72 @@ p, li { white-space: pre-wrap; }
     <property name="text">
      <string>Clear</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>210</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLineEdit" name="lineEdit_7">
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>by</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_8">
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>210</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLineEdit" name="lineEdit_5">
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>by</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_6">
+       <property name="text">
+        <string>3</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
