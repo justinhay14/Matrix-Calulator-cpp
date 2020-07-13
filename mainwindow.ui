@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>923</width>
+    <width>897</width>
     <height>661</height>
    </rect>
   </property>
@@ -324,7 +324,7 @@
    <widget class="QComboBox" name="comboBox_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>240</y>
       <width>121</width>
       <height>22</height>
@@ -354,7 +354,7 @@
    <widget class="QPushButton" name="pushButton_9">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>270</y>
       <width>81</width>
       <height>23</height>
@@ -367,7 +367,7 @@
    <widget class="QPushButton" name="pushButton_10">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>190</x>
       <y>240</y>
       <width>75</width>
       <height>23</height>
@@ -393,7 +393,7 @@
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>60</x>
       <y>300</y>
       <width>101</width>
       <height>23</height>
@@ -406,7 +406,7 @@
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>170</x>
       <y>300</y>
       <width>21</width>
       <height>20</height>
@@ -432,7 +432,7 @@
    <widget class="QComboBox" name="comboBox_3">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>610</x>
       <y>240</y>
       <width>121</width>
       <height>22</height>
@@ -462,7 +462,7 @@
    <widget class="QLineEdit" name="lineEdit_3">
     <property name="geometry">
      <rect>
-      <x>750</x>
+      <x>720</x>
       <y>300</y>
       <width>21</width>
       <height>20</height>
@@ -475,7 +475,7 @@
    <widget class="QPushButton" name="pushButton_13">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>610</x>
       <y>270</y>
       <width>81</width>
       <height>23</height>
@@ -488,7 +488,7 @@
    <widget class="QPushButton" name="pushButton_14">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>610</x>
       <y>300</y>
       <width>101</width>
       <height>23</height>
@@ -501,7 +501,7 @@
    <widget class="QLineEdit" name="lineEdit_4">
     <property name="geometry">
      <rect>
-      <x>740</x>
+      <x>720</x>
       <y>270</y>
       <width>21</width>
       <height>20</height>
@@ -645,7 +645,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>300</x>
       <y>0</y>
       <width>311</width>
       <height>31</height>
