@@ -93,7 +93,55 @@ void MainWindow::on_pushButton_10_clicked()
 
 void MainWindow::on_pushButton_12_clicked()
 {
-
+    QString function = ui->comboBox_3->currentText();
+    vector<vector<double>> grid (ui->tableWidget_2->rowCount(), vector<double>(ui->tableWidget_2->columnCount(), 0));
+    for (int i = 0; i < ui->tableWidget_2->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget_2->columnCount(); j++) {
+            bool satis = true;
+            double val = ui->tableWidget_2->item(i, j)->text().toDouble(&satis);
+            if (!satis) {
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                ui->textBrowser->setTextCursor(cursor);
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                return;
+            }
+            grid[i][j] = val;
+        }
+    }
+    if (function.startsWith("Determinant")) {
+        if (ui->tableWidget_2->rowCount() == 1 && ui->tableWidget_2->columnCount() == 1) {
+            QString spec_case = "";
+            spec_case.setNum(grid[0][0]);
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("det(B) = " + spec_case + "\n\n");
+            return;
+        }
+        double answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).determinant();
+        QString text = "";
+        text.setNum(answer);
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("det(B) = " + text + "\n\n");
+    }
+    else if (function.startsWith("Inverse")) {
+        Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).inverse();
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Inverse(B) = \n" + to_string(answer) + "\n");
+    }
+    else if (function.startsWith("Transpose")) {
+        Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).transpose();
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Transpose(B) = \n" + to_string(answer) + "\n");
+    }
+    else if (function.startsWith("Reduced Row Echelon Form")) {
+        Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).rref();
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("rref(B) = \n" + to_string(answer) + "\n");
+    }
 }
 
 void MainWindow::on_pushButton_clicked()
