@@ -306,5 +306,23 @@ void MainWindow::on_pushButton_11_clicked()
 
 void MainWindow::on_lineEdit_5_editingFinished()
 {
-
+    bool is_ok = true;
+    int val = ui->lineEdit_5->text().toInt(&is_ok);
+    if (val < 1)
+        return;
+    if (is_ok) {
+        int rows_i = ui->tableWidget->rowCount();
+        if (val < rows_i) {
+            for (int i = rows_i; i > val; i--) {
+                ui->tableWidget->removeRow(i);
+                ui->tableWidget->setRowCount(val);
+            }
+        }
+        else if (val > rows_i) {
+            for (int i = rows_i + 1; i <= val; i++) {
+                ui->tableWidget->insertRow(i);
+                ui->tableWidget->setRowCount(val);
+            }
+        }
+    }
 }
