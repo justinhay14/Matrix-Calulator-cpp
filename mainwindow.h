@@ -40,6 +40,10 @@ private slots:
 
     void on_lineEdit_6_editingFinished();
 
+    void on_lineEdit_7_editingFinished();
+
+    void on_lineEdit_8_editingFinished();
+
 private:
     Ui::MainWindow *ui;
 };

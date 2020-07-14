@@ -349,3 +349,49 @@ void MainWindow::on_lineEdit_6_editingFinished()
         }
     }
 }
+
+void MainWindow::on_lineEdit_7_editingFinished()
+{
+    bool is_ok = true;
+    int val = ui->lineEdit_7->text().toInt(&is_ok);
+    if (val < 1)
+        return;
+    if (is_ok) {
+        int rows_i = ui->tableWidget_2->rowCount();
+        if (val < rows_i) {
+            for (int i = rows_i; i > val; i--) {
+                ui->tableWidget_2->removeRow(i);
+                ui->tableWidget_2->setRowCount(val);
+            }
+        }
+        else if (val > rows_i) {
+            for (int i = rows_i + 1; i <= val; i++) {
+                ui->tableWidget_2->insertRow(i);
+                ui->tableWidget_2->setRowCount(val);
+            }
+        }
+    }
+}
+
+void MainWindow::on_lineEdit_8_editingFinished()
+{
+    bool is_ok = true;
+    int val = ui->lineEdit_8->text().toInt(&is_ok);
+    if (val < 1)
+        return;
+    if (is_ok) {
+        int rows_i = ui->tableWidget_2->columnCount();
+        if (val < rows_i) {
+            for (int i = rows_i; i > val; i--) {
+                ui->tableWidget_2->removeColumn(i);
+                ui->tableWidget_2->setColumnCount(val);
+            }
+        }
+        else if (val > rows_i) {
+            for (int i = rows_i + 1; i <= val; i++) {
+                ui->tableWidget_2->insertColumn(i);
+                ui->tableWidget_2->setColumnCount(val);
+            }
+        }
+    }
+}
