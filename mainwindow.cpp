@@ -326,3 +326,26 @@ void MainWindow::on_lineEdit_5_editingFinished()
         }
     }
 }
+
+void MainWindow::on_lineEdit_6_editingFinished()
+{
+    bool is_ok = true;
+    int val = ui->lineEdit_6->text().toInt(&is_ok);
+    if (val < 1)
+        return;
+    if (is_ok) {
+        int rows_i = ui->tableWidget->columnCount();
+        if (val < rows_i) {
+            for (int i = rows_i; i > val; i--) {
+                ui->tableWidget->removeColumn(i);
+                ui->tableWidget->setColumnCount(val);
+            }
+        }
+        else if (val > rows_i) {
+            for (int i = rows_i + 1; i <= val; i++) {
+                ui->tableWidget->insertColumn(i);
+                ui->tableWidget->setColumnCount(val);
+            }
+        }
+    }
+}
