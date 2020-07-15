@@ -205,18 +205,48 @@ void MainWindow::on_pushButton_clicked()
     QTextCursor cursor = QTextCursor(ui->textBrowser->document());
     ui->textBrowser->setTextCursor(cursor);
     if (function.startsWith("A + B")) {
+        if (ui->tableWidget->rowCount() != ui->tableWidget_2->rowCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            return;
+        }
         ui->textBrowser->insertPlainText("A + B = \n" + to_string(A.add(B)) + "\n");
     }
     else if (function.startsWith("A - B")) {
+        if (ui->tableWidget->rowCount() != ui->tableWidget_2->rowCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            return;
+        }
         ui->textBrowser->insertPlainText("A - B = \n" + to_string(A.subtract(B)) + "\n");
     }
     else if (function.startsWith("B - A")) {
+        if (ui->tableWidget->rowCount() != ui->tableWidget_2->rowCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            return;
+        }
         ui->textBrowser->insertPlainText("B - A = \n" + to_string(B.subtract(A)) + "\n");
     }
     else if (function.startsWith("AB")) {
+        if (ui->tableWidget->columnCount() != ui->tableWidget_2->rowCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            return;
+        }
         ui->textBrowser->insertPlainText("AB = \n" + to_string(A.multiply(B)) + "\n");
     }
     else if (function.startsWith("BA")) {
+        if (ui->tableWidget->rowCount() != ui->tableWidget_2->columnCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            return;
+        }
         ui->textBrowser->insertPlainText("BA = \n" + to_string(B.multiply(A)) + "\n");
     }
 }
