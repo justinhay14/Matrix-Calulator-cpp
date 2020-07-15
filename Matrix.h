@@ -101,7 +101,7 @@ public:
         vector<vector<double>> prod_grid (rows, vector<double> (factor.get_columns(), 0.0));
         Matrix product = Matrix(rows, factor.get_columns(), prod_grid);
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
+            for (int j = 0; j < factor.get_columns(); j++) {
                 for (int k = 0; k < columns; k++) {
                     product.grid[i][j] += grid[i][k] * factor.grid[k][j];
                 }
