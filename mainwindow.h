@@ -44,6 +44,10 @@ private slots:
 
     void on_lineEdit_8_editingFinished();
 
+    void on_pushButton_14_clicked();
+
+    void on_pushButton_13_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

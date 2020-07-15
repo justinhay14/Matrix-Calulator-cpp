@@ -325,6 +325,12 @@ void MainWindow::on_pushButton_9_clicked()
 
 void MainWindow::on_pushButton_11_clicked()
 {
+    if (ui->tableWidget->rowCount() != ui->tableWidget->columnCount()) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+        return;
+    }
     QString function = ui->comboBox_2->currentText();
     vector<vector<double>> grid (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
     for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
@@ -447,4 +453,14 @@ void MainWindow::on_lineEdit_8_editingFinished()
             }
         }
     }
+}
+
+void MainWindow::on_pushButton_14_clicked()
+{
+
+}
+
+void MainWindow::on_pushButton_13_clicked()
+{
+
 }
