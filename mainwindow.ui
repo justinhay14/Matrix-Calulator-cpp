@@ -23,6 +23,9 @@
       <height>161</height>
      </rect>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="gridStyle">
      <enum>Qt::SolidLine</enum>
     </property>

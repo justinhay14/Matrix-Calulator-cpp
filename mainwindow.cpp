@@ -37,7 +37,6 @@ QString to_string(Matrix A) {
     return ans;
 }
 
-
 void MainWindow::on_pushButton_10_clicked()
 {
     QString function = ui->comboBox_2->currentText();
@@ -56,6 +55,12 @@ void MainWindow::on_pushButton_10_clicked()
         }
     }
     if (function.startsWith("Determinant")) {
+        if (ui->tableWidget->rowCount() != ui->tableWidget->columnCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            return;
+        }
         if (ui->tableWidget->rowCount() == 1 && ui->tableWidget->columnCount() == 1) {
             QString spec_case = "";
             spec_case.setNum(grid[0][0]);
@@ -72,6 +77,12 @@ void MainWindow::on_pushButton_10_clicked()
         ui->textBrowser->insertPlainText("det(A) = " + text + "\n\n");
     }
     else if (function.startsWith("Inverse")) {
+        if (ui->tableWidget->rowCount() != ui->tableWidget->columnCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            return;
+        }
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).inverse();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
@@ -109,6 +120,12 @@ void MainWindow::on_pushButton_12_clicked()
         }
     }
     if (function.startsWith("Determinant")) {
+        if (ui->tableWidget_2->rowCount() != ui->tableWidget_2->columnCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            return;
+        }
         if (ui->tableWidget_2->rowCount() == 1 && ui->tableWidget_2->columnCount() == 1) {
             QString spec_case = "";
             spec_case.setNum(grid[0][0]);
@@ -125,6 +142,12 @@ void MainWindow::on_pushButton_12_clicked()
         ui->textBrowser->insertPlainText("det(B) = " + text + "\n\n");
     }
     else if (function.startsWith("Inverse")) {
+        if (ui->tableWidget_2->rowCount() != ui->tableWidget_2->columnCount()) {
+            QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+            ui->textBrowser->setTextCursor(cursor);
+            ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            return;
+        }
         Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).inverse();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
