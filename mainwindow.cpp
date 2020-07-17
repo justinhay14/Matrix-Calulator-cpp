@@ -271,6 +271,12 @@ void MainWindow::on_pushButton_5_clicked()
         }
         ui->tableWidget->setColumnCount(ui->tableWidget->rowCount());
     }
+    QString new_rows = "";
+    new_rows.setNum(ui->tableWidget->rowCount());
+    ui->lineEdit_5->setText(new_rows);
+    QString new_columns = "";
+    new_columns.setNum(ui->tableWidget->columnCount());
+    ui->lineEdit_6->setText(new_columns);
 }
 // works
 void MainWindow::on_pushButton_6_clicked()
