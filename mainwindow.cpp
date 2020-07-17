@@ -303,6 +303,12 @@ void MainWindow::on_pushButton_6_clicked()
         }
         ui->tableWidget->setRowCount(ui->tableWidget->columnCount());
     }
+    QString new_rows = "";
+    new_rows.setNum(ui->tableWidget->rowCount());
+    ui->lineEdit_5->setText(new_rows);
+    QString new_columns = "";
+    new_columns.setNum(ui->tableWidget->columnCount());
+    ui->lineEdit_6->setText(new_columns);
 }
 // works
 void MainWindow::on_pushButton_7_clicked()
@@ -325,6 +331,12 @@ void MainWindow::on_pushButton_7_clicked()
         }
         ui->tableWidget_2->setColumnCount(ui->tableWidget_2->rowCount());
     }
+    QString new_rows = "";
+    new_rows.setNum(ui->tableWidget_2->rowCount());
+    ui->lineEdit_7->setText(new_rows);
+    QString new_columns = "";
+    new_columns.setNum(ui->tableWidget_2->columnCount());
+    ui->lineEdit_8->setText(new_columns);
 }
 // works
 void MainWindow::on_pushButton_8_clicked()
@@ -351,6 +363,12 @@ void MainWindow::on_pushButton_8_clicked()
         }
         ui->tableWidget_2->setRowCount(ui->tableWidget_2->columnCount());
     }
+    QString new_rows = "";
+    new_rows.setNum(ui->tableWidget_2->rowCount());
+    ui->lineEdit_7->setText(new_rows);
+    QString new_columns = "";
+    new_columns.setNum(ui->tableWidget_2->columnCount());
+    ui->lineEdit_8->setText(new_columns);
 }
 // works
 void MainWindow::on_pushButton_9_clicked()
