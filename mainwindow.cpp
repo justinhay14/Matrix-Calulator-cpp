@@ -301,21 +301,49 @@ void MainWindow::on_pushButton_6_clicked()
 // works
 void MainWindow::on_pushButton_7_clicked()
 {
-    ui->tableWidget_2->setRowCount(ui->tableWidget_2->rowCount() + 1);
-    ui->tableWidget_2->setColumnCount(ui->tableWidget_2->columnCount() + 1);
-    ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount() + 1);
-    ui->tableWidget_2->insertColumn(ui->tableWidget_2->columnCount() + 1);
+    if (ui->tableWidget_2->columnCount() == ui->tableWidget_2->rowCount()) {
+        ui->tableWidget_2->setRowCount(ui->tableWidget_2->rowCount() + 1);
+        ui->tableWidget_2->setColumnCount(ui->tableWidget_2->columnCount() + 1);
+        ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount() + 1);
+        ui->tableWidget_2->insertColumn(ui->tableWidget_2->columnCount() + 1);
+    }
+    else if (ui->tableWidget_2->rowCount() < ui->tableWidget_2->columnCount()) {
+        for (int i = ui->tableWidget_2->rowCount() + 1; i <= ui->tableWidget_2->columnCount(); i++) {
+            ui->tableWidget_2->insertRow(i);
+        }
+        ui->tableWidget_2->setRowCount(ui->tableWidget_2->columnCount());
+    }
+    else {
+        for (int i = ui->tableWidget_2->columnCount() + 1; i <= ui->tableWidget_2->rowCount(); i++) {
+            ui->tableWidget_2->insertColumn(i);
+        }
+        ui->tableWidget_2->setColumnCount(ui->tableWidget_2->rowCount());
+    }
 }
 // works
 void MainWindow::on_pushButton_8_clicked()
 {
-    if (ui->tableWidget_2->rowCount() != 1) {
-        ui->tableWidget_2->setRowCount(ui->tableWidget_2->rowCount() - 1);
-        ui->tableWidget_2->removeRow(ui->tableWidget_2->rowCount());
+    if (ui->tableWidget_2->columnCount() == ui->tableWidget_2->rowCount()) {
+        if (ui->tableWidget_2->rowCount() != 1) {
+            ui->tableWidget_2->setRowCount(ui->tableWidget_2->rowCount() - 1);
+            ui->tableWidget_2->removeRow(ui->tableWidget_2->rowCount());
+        }
+        if (ui->tableWidget_2->columnCount() != 1) {
+            ui->tableWidget_2->setColumnCount(ui->tableWidget_2->columnCount() - 1);
+            ui->tableWidget_2->removeColumn(ui->tableWidget_2->columnCount());
+        }
     }
-    if (ui->tableWidget_2->columnCount() != 1) {
-        ui->tableWidget_2->setColumnCount(ui->tableWidget_2->columnCount() - 1);
-        ui->tableWidget_2->removeColumn(ui->tableWidget_2->columnCount());
+    else if (ui->tableWidget_2->rowCount() < ui->tableWidget_2->columnCount()) {
+        for (int i = ui->tableWidget_2->columnCount(); i > ui->tableWidget_2->rowCount() + 1; i--) {
+            ui->tableWidget_2->removeColumn(i);
+        }
+        ui->tableWidget_2->setColumnCount(ui->tableWidget_2->rowCount());
+    }
+    else {
+        for (int i = ui->tableWidget_2->rowCount(); i > ui->tableWidget_2->columnCount() + 1; i--) {
+            ui->tableWidget_2->removeRow(i);
+        }
+        ui->tableWidget_2->setRowCount(ui->tableWidget_2->columnCount());
     }
 }
 // works
