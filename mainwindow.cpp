@@ -253,10 +253,28 @@ void MainWindow::on_pushButton_clicked()
 // works
 void MainWindow::on_pushButton_5_clicked()
 {
-    ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
-    ui->tableWidget->setColumnCount(ui->tableWidget->columnCount() + 1);
-    ui->tableWidget->insertRow(ui->tableWidget->rowCount() + 1);
-    ui->tableWidget->insertColumn(ui->tableWidget->columnCount() + 1);
+    if (ui->tableWidget->columnCount() == ui->tableWidget->rowCount()) {
+        ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
+        ui->tableWidget->setColumnCount(ui->tableWidget->columnCount() + 1);
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount() + 1);
+        ui->tableWidget->insertColumn(ui->tableWidget->columnCount() + 1);
+    }
+    else if (ui->tableWidget->rowCount() < ui->tableWidget->columnCount()) {
+        ui->tableWidget->setColumnCount(ui->tableWidget->columnCount() + 1);
+        ui->tableWidget->insertColumn(ui->tableWidget->columnCount() + 1);
+        for (int i = ui->tableWidget->rowCount() + 1; i <= ui->tableWidget->columnCount(); i++) {
+            ui->tableWidget->insertRow(i);
+        }
+        ui->tableWidget->setRowCount(ui->tableWidget->columnCount());
+    }
+    else {
+        ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount() + 1);
+        for (int i = ui->tableWidget->columnCount() + 1; i <= ui->tableWidget->rowCount(); i++) {
+            ui->tableWidget->insertColumn(i);
+        }
+        ui->tableWidget->setColumnCount(ui->tableWidget->rowCount());
+    }
 }
 // works
 void MainWindow::on_pushButton_6_clicked()
