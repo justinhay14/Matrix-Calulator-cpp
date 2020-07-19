@@ -92,7 +92,16 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
+     </property>
+     <property name="background">
+      <brush brushstyle="NoBrush">
+       <color alpha="255">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+       </color>
+      </brush>
      </property>
      <property name="foreground">
       <brush brushstyle="NoBrush">
@@ -109,7 +118,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
      <property name="foreground">
       <brush brushstyle="NoBrush">
@@ -126,7 +135,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
      <property name="foreground">
       <brush brushstyle="NoBrush">
@@ -143,7 +152,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
      <property name="foreground">
       <brush brushstyle="NoBrush">
@@ -160,7 +169,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
      <property name="foreground">
       <brush brushstyle="NoBrush">
@@ -177,7 +186,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
      <property name="foreground">
       <brush brushstyle="NoBrush">
@@ -194,7 +203,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="2" column="1">
@@ -202,7 +211,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="2" column="2">
@@ -210,16 +219,16 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
    </widget>
    <widget class="QTableWidget" name="tableWidget_2">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>580</x>
       <y>10</y>
-      <width>251</width>
+      <width>281</width>
       <height>161</height>
      </rect>
     </property>
@@ -268,22 +277,31 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="0" column="1">
+     <property name="text">
+      <string/>
+     </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="0" column="2">
+     <property name="text">
+      <string/>
+     </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="1" column="0">
+     <property name="text">
+      <string/>
+     </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="1" column="1">
@@ -291,7 +309,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="1" column="2">
@@ -299,7 +317,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="2" column="0">
@@ -307,12 +325,15 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="2" column="1">
+     <property name="text">
+      <string/>
+     </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
     <item row="2" column="2">
@@ -320,7 +341,7 @@
       <string/>
      </property>
      <property name="textAlignment">
-      <set>AlignCenter</set>
+      <set>AlignLeading|AlignVCenter</set>
      </property>
     </item>
    </widget>
@@ -648,7 +669,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>290</x>
       <y>0</y>
       <width>311</width>
       <height>31</height>
@@ -669,7 +690,7 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="pushButton_15">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>420</x>
       <y>610</y>
       <width>75</width>
       <height>23</height>

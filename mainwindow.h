@@ -48,6 +48,10 @@ private slots:
 
     void on_pushButton_13_clicked();
 
+    void on_tableWidget_cellEntered(int row, int column);
+
+    void on_tableWidget_cellChanged(int row, int column);
+
 private:
     Ui::MainWindow *ui;
 };
