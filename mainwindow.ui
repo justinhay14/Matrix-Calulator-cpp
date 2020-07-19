@@ -26,11 +26,23 @@
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
     </property>
-    <property name="gridStyle">
-     <enum>Qt::SolidLine</enum>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
     </property>
+    <property name="showGrid">
+     <bool>true</bool>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::DashDotLine</enum>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>39</number>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
     </attribute>
     <row>
      <property name="text">
@@ -232,8 +244,17 @@
       <height>161</height>
      </rect>
     </property>
+    <property name="gridStyle">
+     <enum>Qt::DashDotLine</enum>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>39</number>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
     </attribute>
     <row>
      <property name="text">
@@ -413,6 +434,9 @@
     <property name="text">
      <string>2</string>
     </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_11">
     <property name="geometry">
@@ -438,6 +462,9 @@
     </property>
     <property name="text">
      <string>2</string>
+    </property>
+    <property name="frame">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_12">
@@ -495,6 +522,9 @@
     <property name="text">
      <string>2</string>
     </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_13">
     <property name="geometry">
@@ -534,6 +564,9 @@
     <property name="text">
      <string>2</string>
     </property>
+    <property name="frame">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
@@ -543,6 +576,12 @@
       <width>541</width>
       <height>261</height>
      </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
     </property>
     <property name="html">
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -678,6 +717,11 @@ p, li { white-space: pre-wrap; }
     <property name="font">
      <font>
       <pointsize>24</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
      </font>
     </property>
     <property name="text">
@@ -715,6 +759,9 @@ p, li { white-space: pre-wrap; }
        <property name="text">
         <string>3</string>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -728,6 +775,9 @@ p, li { white-space: pre-wrap; }
       <widget class="QLineEdit" name="lineEdit_8">
        <property name="text">
         <string>3</string>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -748,6 +798,9 @@ p, li { white-space: pre-wrap; }
        <property name="text">
         <string>3</string>
        </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -761,6 +814,9 @@ p, li { white-space: pre-wrap; }
       <widget class="QLineEdit" name="lineEdit_6">
        <property name="text">
         <string>3</string>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
