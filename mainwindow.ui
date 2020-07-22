@@ -668,6 +668,13 @@ p, li { white-space: pre-wrap; }
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="text">
+        <string>Switch</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QComboBox" name="comboBox">
        <item>
         <property name="text">
