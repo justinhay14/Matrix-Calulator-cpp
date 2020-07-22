@@ -626,5 +626,55 @@ void MainWindow::on_tableWidget_cellEntered(int row, int column)
 
 void MainWindow::on_pushButton_2_clicked()
 {
+    vector<vector<double>> grid_a (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
+    for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
+            bool satis = true;
+            double val = ui->tableWidget->item(i, j)->text().toDouble(&satis);
+            if (!satis) {
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                ui->textBrowser->setTextCursor(cursor);
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                return;
+            }
+            grid_a[i][j] = val;
+        }
+    }
+    Matrix A = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid_a);
 
+    vector<vector<double>> grid_b (ui->tableWidget_2->rowCount(), vector<double>(ui->tableWidget_2->columnCount(), 0));
+    for (int i = 0; i < ui->tableWidget_2->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget_2->columnCount(); j++) {
+            bool satis = true;
+            double val = ui->tableWidget->item(i, j)->text().toDouble(&satis);
+            if (!satis) {
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                ui->textBrowser->setTextCursor(cursor);
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                return;
+            }
+            grid_b[i][j] = val;
+        }
+    }
+    Matrix B = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid_b);
+    if (A.get_rows() > B.get_rows()) {
+        for (int i = A.get_rows(); i > B.get_rows(); i--) {
+            ui->tableWidget->removeRow(i);
+        }
+        ui->tableWidget->setRowCount(B.get_rows());
+        for (int i = B.get_rows() + 1; i <= A.get_rows(); i++) {
+            ui->tableWidget_2->insertRow(i);
+        }
+        ui->tableWidget_2->setRowCount(A.get_rows());
+    }
+    else if (A.get_rows() < B.get_rows()) {
+        for (int i = B.get_rows(); i > A.get_rows(); i--) {
+            ui->tableWidget_2->removeRow(i);
+        }
+        ui->tableWidget_2->setRowCount(A.get_rows());
+        for (int i = A.get_rows() + 1; i <= B.get_rows(); i++) {
+            ui->tableWidget->insertRow(i);
+        }
+        ui->tableWidget->setRowCount(B.get_rows());
+    }
 }
