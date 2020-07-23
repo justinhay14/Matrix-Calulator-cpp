@@ -646,7 +646,7 @@ void MainWindow::on_pushButton_2_clicked()
     for (int i = 0; i < ui->tableWidget_2->rowCount(); i++) {
         for (int j = 0; j < ui->tableWidget_2->columnCount(); j++) {
             bool satis = true;
-            double val = ui->tableWidget->item(i, j)->text().toDouble(&satis);
+            double val = ui->tableWidget_2->item(i, j)->text().toDouble(&satis);
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
@@ -657,6 +657,7 @@ void MainWindow::on_pushButton_2_clicked()
         }
     }
     Matrix B = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid_b);
+
     if (A.get_rows() > B.get_rows()) {
         for (int i = A.get_rows(); i > B.get_rows(); i--) {
             ui->tableWidget->removeRow(i);
@@ -676,5 +677,26 @@ void MainWindow::on_pushButton_2_clicked()
             ui->tableWidget->insertRow(i);
         }
         ui->tableWidget->setRowCount(B.get_rows());
+    }
+
+    if (A.get_columns() > B.get_columns()) {
+        for (int i = A.get_columns(); i > B.get_columns(); i--) {
+            ui->tableWidget->removeColumn(i);
+        }
+        ui->tableWidget->setColumnCount(B.get_columns());
+        for (int i = B.get_columns() + 1; i <= A.get_columns(); i++) {
+            ui->tableWidget_2->insertColumn(i);
+        }
+        ui->tableWidget_2->setColumnCount(A.get_columns());
+    }
+    else if (A.get_columns() < B.get_columns()) {
+        for (int i = B.get_columns(); i > A.get_columns(); i--) {
+            ui->tableWidget_2->removeColumn(i);
+        }
+        ui->tableWidget_2->setColumnCount(A.get_columns());
+        for (int i = A.get_columns() + 1; i <= B.get_columns(); i++) {
+            ui->tableWidget->insertColumn(i);
+        }
+        ui->tableWidget->setColumnCount(B.get_columns());
     }
 }
