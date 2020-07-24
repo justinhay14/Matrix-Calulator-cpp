@@ -717,4 +717,10 @@ void MainWindow::on_pushButton_2_clicked()
             ui->tableWidget_2->setItem(i, j, item);
         }
     }
+    QString line5 = ui->lineEdit_5->text();
+    QString line6 = ui->lineEdit_6->text();
+    ui->lineEdit_5->setText(ui->lineEdit_7->text());
+    ui->lineEdit_6->setText(ui->lineEdit_8->text());
+    ui->lineEdit_7->setText(line5);
+    ui->lineEdit_8->setText(line6);
 }
