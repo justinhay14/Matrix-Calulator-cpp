@@ -699,4 +699,22 @@ void MainWindow::on_pushButton_2_clicked()
         }
         ui->tableWidget->setColumnCount(B.get_columns());
     }
+
+    for (int i = 0; i < B.get_rows(); i++) {
+        for (int j = 0; j < B.get_columns(); j++) {
+            QString text = "";
+            text.setNum(grid_b[i][j]);
+            QTableWidgetItem *item = new QTableWidgetItem(text);
+            ui->tableWidget->setItem(i, j, item);
+        }
+    }
+
+    for (int i = 0; i < A.get_rows(); i++) {
+        for (int j = 0; j < A.get_columns(); j++) {
+            QString text = "";
+            text.setNum(grid_a[i][j]);
+            QTableWidgetItem *item = new QTableWidgetItem(text);
+            ui->tableWidget_2->setItem(i, j, item);
+        }
+    }
 }
