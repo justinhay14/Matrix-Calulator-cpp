@@ -462,8 +462,12 @@ void MainWindow::on_lineEdit_5_editingFinished()
 {
     bool is_ok = true;
     int val = ui->lineEdit_5->text().toInt(&is_ok);
-    if (val < 1)
+    if (val < 1 || val > 100) {
+        QString str = "";
+        str.setNum(ui->tableWidget->rowCount());
+        ui->lineEdit_5->setText(str);
         return;
+    }
     if (is_ok) {
         int rows_i = ui->tableWidget->rowCount();
         if (val < rows_i) {
@@ -478,6 +482,11 @@ void MainWindow::on_lineEdit_5_editingFinished()
                 ui->tableWidget->setRowCount(val);
             }
         }
+    }
+    else {
+        QString str = "";
+        str.setNum(ui->tableWidget->rowCount());
+        ui->lineEdit_5->setText(str);
     }
 }
 
