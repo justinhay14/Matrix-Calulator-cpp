@@ -201,7 +201,7 @@ void MainWindow::on_pushButton_clicked()
     for (int i = 0; i < ui->tableWidget_2->rowCount(); i++) {
         for (int j = 0; j < ui->tableWidget_2->columnCount(); j++) {
             bool satis = true;
-            double val = ui->tableWidget->item(i, j)->text().toDouble(&satis);
+            double val = ui->tableWidget_2->item(i, j)->text().toDouble(&satis);
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
@@ -223,7 +223,7 @@ void MainWindow::on_pushButton_clicked()
             return;
         }
         Matrix answer = A.add(B);
-        ui->textBrowser->insertPlainText("A + B = \n" + to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("A + B = \n" + to_string(A.add(B)) + "\n");
         g_latest.deposit(answer);
     }
     else if (function.startsWith("A - B")) {
@@ -234,7 +234,7 @@ void MainWindow::on_pushButton_clicked()
             return;
         }
         Matrix answer = A.subtract(B);
-        ui->textBrowser->insertPlainText("A - B = \n" + to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("A - B = \n" + to_string(A.subtract(B)) + "\n");
         g_latest.deposit(answer);
     }
     else if (function.startsWith("B - A")) {
@@ -245,7 +245,7 @@ void MainWindow::on_pushButton_clicked()
             return;
         }
         Matrix answer = B.subtract(A);
-        ui->textBrowser->insertPlainText("B - A = \n" + to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("B - A = \n" + to_string(B.subtract(A)) + "\n");
         g_latest.deposit(answer);
     }
     else if (function.startsWith("AB")) {
@@ -256,7 +256,7 @@ void MainWindow::on_pushButton_clicked()
             return;
         }
         Matrix answer = A.multiply(B);
-        ui->textBrowser->insertPlainText("AB = \n" + to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("AB = \n" + to_string(A.multiply(B)) + "\n");
         g_latest.deposit(answer);
     }
     else if (function.startsWith("BA")) {
@@ -267,7 +267,7 @@ void MainWindow::on_pushButton_clicked()
             return;
         }
         Matrix answer = B.multiply(A);
-        ui->textBrowser->insertPlainText("BA = \n" + to_string(answer) + "\n");
+        ui->textBrowser->insertPlainText("BA = \n" + to_string(B.multiply(A)) + "\n");
         g_latest.deposit(answer);
     }
 }

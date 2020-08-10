@@ -27,15 +27,16 @@ Matrix::~Matrix() {
 }
 
 /*int main() {
-    vector<vector<double>> vect{{-3, 1, 2, 4}, {0, 0, 0, 0}};
-    vector<vector<double>> vect1{{1, 2}, {3,4}, {5,6}, {7,8}};
-    Matrix A = Matrix(2, 4,vect);
-    Matrix B = Matrix(4, 2,vect1);
+    vector<vector<double>> vect{{1, 1, 1}, {1,1,1}, {1,1,3}};
+    vector<vector<double>> vect1{{0,0,0}, {0,1,5}, {0,0,0}};
+    Matrix A = Matrix(3, 3,vect);
+    Matrix B = Matrix(3, 3,vect1);
     A.print();
-    //Matrix C = A.multiply(B);
-    B.deposit(A);
-    //A.~Matrix();
     B.print();
+    Matrix C = A.subtract(B);
+    //B.deposit(A);
+    //A.~Matrix();
+    C.print();
     //C.~Matrix();
     //B.~Matrix();
     //cout << A.determinant() << endl;
