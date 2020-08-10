@@ -15,6 +15,18 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>2</number>
+    </property>
+    <property name="topMargin">
+     <number>2</number>
+    </property>
+    <property name="rightMargin">
+     <number>2</number>
+    </property>
+    <property name="bottomMargin">
+     <number>2</number>
+    </property>
     <item row="0" column="0">
      <widget class="QScrollArea" name="scrollArea">
       <property name="sizePolicy">
@@ -23,23 +35,23 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(220, 255, 255)</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Sunken</enum>
       </property>
       <property name="widgetResizable">
        <bool>false</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignHCenter|Qt::AlignTop</set>
       </property>
       <widget class="QWidget" name="scrollAreaWidgetContents_4">
        <property name="geometry">
         <rect>
-         <x>1</x>
-         <y>1</y>
+         <x>8</x>
+         <y>0</y>
          <width>851</width>
          <height>646</height>
         </rect>
@@ -47,9 +59,9 @@
        <widget class="QLabel" name="label">
         <property name="geometry">
          <rect>
-          <x>270</x>
+          <x>-10</x>
           <y>0</y>
-          <width>311</width>
+          <width>871</width>
           <height>31</height>
          </rect>
         </property>
@@ -79,6 +91,10 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Insert into A</string>
         </property>
@@ -95,6 +111,10 @@
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QPushButton" name="pushButton_3">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>Clear</string>
            </property>
@@ -102,6 +122,10 @@
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_5">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>+</string>
            </property>
@@ -109,6 +133,10 @@
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_6">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>-</string>
            </property>
@@ -124,6 +152,10 @@
           <width>121</width>
           <height>22</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
         </property>
         <item>
          <property name="text">
@@ -155,6 +187,10 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Clear</string>
         </property>
@@ -167,6 +203,9 @@
           <width>21</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>2</string>
@@ -184,6 +223,10 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Calculate</string>
         </property>
@@ -196,6 +239,9 @@
           <width>21</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>2</string>
@@ -214,8 +260,14 @@
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLineEdit" name="lineEdit_7">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>3</string>
            </property>
@@ -233,6 +285,9 @@
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_8">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>3</string>
            </property>
@@ -252,6 +307,10 @@
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Raise to power of</string>
         </property>
@@ -264,6 +323,9 @@
           <width>541</width>
           <height>261</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::WinPanel</enum>
@@ -288,6 +350,10 @@ p, li { white-space: pre-wrap; }
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Calculate</string>
         </property>
@@ -300,6 +366,9 @@ p, li { white-space: pre-wrap; }
           <width>21</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>2</string>
@@ -317,6 +386,10 @@ p, li { white-space: pre-wrap; }
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Scalar Multiply</string>
         </property>
@@ -329,6 +402,9 @@ p, li { white-space: pre-wrap; }
           <width>21</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>2</string>
@@ -346,6 +422,10 @@ p, li { white-space: pre-wrap; }
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Raise to power of</string>
         </property>
@@ -362,6 +442,10 @@ p, li { white-space: pre-wrap; }
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QPushButton" name="pushButton_4">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>Clear</string>
            </property>
@@ -369,6 +453,10 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_7">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>+</string>
            </property>
@@ -376,6 +464,10 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QPushButton" name="pushButton_8">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>-</string>
            </property>
@@ -393,8 +485,14 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLineEdit" name="lineEdit_5">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>3</string>
            </property>
@@ -405,6 +503,9 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QLabel" name="label_2">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="text">
             <string>by</string>
            </property>
@@ -412,6 +513,9 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_6">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>3</string>
            </property>
@@ -431,6 +535,10 @@ p, li { white-space: pre-wrap; }
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Insert into B</string>
         </property>
@@ -443,6 +551,10 @@ p, li { white-space: pre-wrap; }
           <width>121</width>
           <height>22</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
         </property>
         <item>
          <property name="text">
@@ -473,6 +585,9 @@ p, li { white-space: pre-wrap; }
           <width>281</width>
           <height>161</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="gridStyle">
          <enum>Qt::DashDotLine</enum>
@@ -605,6 +720,10 @@ p, li { white-space: pre-wrap; }
           <height>23</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+        </property>
         <property name="text">
          <string>Scalar Multiply</string>
         </property>
@@ -620,6 +739,9 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="layoutDirection">
          <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -842,6 +964,10 @@ p, li { white-space: pre-wrap; }
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
           <widget class="QPushButton" name="pushButton_2">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>Swap</string>
            </property>
@@ -849,6 +975,10 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QComboBox" name="comboBox">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <item>
             <property name="text">
              <string>A + B</string>
@@ -878,6 +1008,10 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QPushButton" name="pushButton">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
+           </property>
            <property name="text">
             <string>Calculate</string>
            </property>
