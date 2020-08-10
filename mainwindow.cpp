@@ -3,6 +3,8 @@
 #include "Matrix.h"
 #include <iostream>
 
+Matrix *g_latest = NULL;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -90,18 +92,21 @@ void MainWindow::on_pushButton_10_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Inverse(A) = \n" + to_string(answer) + "\n");
+        *g_latest = answer;
     }
     else if (function.startsWith("Transpose")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).transpose();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Transpose(A) = \n" + to_string(answer) + "\n");
+        *g_latest = answer;
     }
     else if (function.startsWith("Reduced Row Echelon Form")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).rref();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("rref(A) = \n" + to_string(answer) + "\n");
+        *g_latest = answer;
     }
 }
 
@@ -723,4 +728,50 @@ void MainWindow::on_pushButton_2_clicked()
     ui->lineEdit_6->setText(ui->lineEdit_8->text());
     ui->lineEdit_7->setText(line5);
     ui->lineEdit_8->setText(line6);
+}
+
+void MainWindow::on_pushButton_17_clicked()
+{
+    int rowf = g_latest->get_rows();
+    if (rowf < 1)
+        return;
+    int rows_i = ui->tableWidget->rowCount();
+    if (rowf < rows_i) {
+        for (int i = rows_i; i > rowf; i--) {
+            ui->tableWidget->removeRow(i);
+            ui->tableWidget->setRowCount(rowf);
+        }
+    }
+    else if (rowf > rows_i) {
+        for (int i = rows_i + 1; i <= rowf; i++) {
+                ui->tableWidget->insertRow(i);
+                ui->tableWidget->setRowCount(rowf);
+        }
+    }
+    int colf = g_latest->get_columns();
+    if (colf < 1)
+        return;
+    int cols_i = ui->tableWidget->columnCount();
+    if (colf < rows_i) {
+        for (int i = cols_i; i > colf; i--) {
+            ui->tableWidget->removeColumn(i);
+            ui->tableWidget->setColumnCount(colf);
+        }
+    }
+    else if (colf > rows_i) {
+        for (int i = cols_i + 1; i <= colf; i++) {
+            ui->tableWidget->insertColumn(i);
+            ui->tableWidget->setColumnCount(colf);
+        }
+    }
+    /*for (int i = 0; i < rowf; i++) {
+        for (int j = 0; j < colf; j++) {
+            ui->tableWidget.se
+        }
+    }*/
+}
+
+void MainWindow::on_pushButton_16_clicked()
+{
+
 }
