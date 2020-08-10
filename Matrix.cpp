@@ -26,16 +26,17 @@ Matrix::~Matrix() {
     grid.shrink_to_fit();
 }
 
-/*int main() {
+int main() {
     vector<vector<double>> vect{{-3, 1, 2, 4}, {0, 0, 0, 0}};
     vector<vector<double>> vect1{{1, 2}, {3,4}, {5,6}, {7,8}};
     Matrix A = Matrix(2, 4,vect);
     Matrix B = Matrix(4, 2,vect1);
-    //A.print();
-    Matrix C = A.multiply(B);
+    A.print();
+    //Matrix C = A.multiply(B);
+    B.deposit(A);
     //A.~Matrix();
-    C.print();
+    B.print();
     //C.~Matrix();
     //B.~Matrix();
     //cout << A.determinant() << endl;
-}*/
+}

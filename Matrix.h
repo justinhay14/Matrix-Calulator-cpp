@@ -205,11 +205,11 @@ public:
     }
 
     void deposit(Matrix source) {
+        grid.resize(source.get_rows());
         for (int i = 0; i < source.get_rows(); i++) {
             grid[i].resize(source.get_columns());
             grid[i].shrink_to_fit();
         }
-        grid.resize(source.get_rows());
         grid.shrink_to_fit();
         rows = source.get_rows();
         columns = source.get_columns();

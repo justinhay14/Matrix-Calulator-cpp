@@ -92,21 +92,21 @@ void MainWindow::on_pushButton_10_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Inverse(A) = \n" + to_string(answer) + "\n");
-        //g_latest = &answer;
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("Transpose")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).transpose();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Transpose(A) = \n" + to_string(answer) + "\n");
-        //g_latest = &answer;
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("Reduced Row Echelon Form")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).rref();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("rref(A) = \n" + to_string(answer) + "\n");
-        //g_latest = &answer;
+        g_latest.deposit(answer);
     }
 }
 
@@ -732,7 +732,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_17_clicked()
 {
-    int rowf = g_latest->get_rows();
+    int rowf = g_latest.get_rows();
     if (rowf < 1)
         return;
     int rows_i = ui->tableWidget->rowCount();
@@ -748,7 +748,7 @@ void MainWindow::on_pushButton_17_clicked()
                 ui->tableWidget->setRowCount(rowf);
         }
     }
-    int colf = g_latest->get_columns();
+    int colf = g_latest.get_columns();
     if (colf < 1)
         return;
     int cols_i = ui->tableWidget->columnCount();
