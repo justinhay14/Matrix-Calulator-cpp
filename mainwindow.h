@@ -16,7 +16,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_tableWidget_cellActivated(int row, int column);
 
     void on_pushButton_10_clicked();
 
@@ -47,10 +46,6 @@ private slots:
     void on_pushButton_14_clicked();
 
     void on_pushButton_13_clicked();
-
-    void on_tableWidget_cellEntered(int row, int column);
-
-    void on_tableWidget_cellChanged(int row, int column);
 
     void on_pushButton_2_clicked();
 

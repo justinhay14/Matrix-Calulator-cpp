@@ -18,14 +18,6 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_tableWidget_cellActivated(int row, int column)
-{
-    QTableWidgetItem *item = ui->tableWidget->takeItem(row, column);
-    item->setTextAlignment(Qt::AlignHCenter);
-    /*ui->tableWidget->setItem(row, column, item);
-    cout << "completed\n";*/
-}
-
 QString to_string(Matrix A) {
     QString ans = "";
     for (int i = 0; i < A.get_rows(); i++) {
@@ -630,20 +622,6 @@ void MainWindow::on_pushButton_13_clicked()
     QString empty = "";
     ui->textBrowser->insertPlainText(empty.setNum(scalar) + "B = \n" + to_string(answer) + "\n");
     g_latest.deposit(answer);
-}
-
-void MainWindow::on_tableWidget_cellChanged(int row, int column)
-{
-    //QTableWidgetItem *item = ui->tableWidget->takeItem(row, column);
-    //item->setTextAlignment(Qt::AlignHCenter);
-    //ui->tableWidget->setItem(row, column, item);
-    //cout << "completed\n";
-}
-
-
-void MainWindow::on_tableWidget_cellEntered(int row, int column)
-{
-
 }
 
 void MainWindow::on_pushButton_2_clicked()

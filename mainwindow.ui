@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>897</width>
-    <height>661</height>
+    <width>881</width>
+    <height>696</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -891,6 +891,22 @@ p, li { white-space: pre-wrap; }
  <resources/>
  <connections>
   <connection>
+   <sender>pushButton_15</sender>
+   <signal>clicked()</signal>
+   <receiver>textBrowser</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>487</x>
+     <y>599</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>555</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>pushButton_4</sender>
    <signal>clicked()</signal>
    <receiver>tableWidget_2</receiver>
@@ -919,22 +935,6 @@ p, li { white-space: pre-wrap; }
     <hint type="destinationlabel">
      <x>122</x>
      <y>142</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_15</sender>
-   <signal>clicked()</signal>
-   <receiver>textBrowser</receiver>
-   <slot>clear()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>487</x>
-     <y>599</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>476</x>
-     <y>555</y>
     </hint>
    </hints>
   </connection>
