@@ -494,8 +494,12 @@ void MainWindow::on_lineEdit_6_editingFinished()
 {
     bool is_ok = true;
     int val = ui->lineEdit_6->text().toInt(&is_ok);
-    if (val < 1)
+    if (val < 1 || val > 100) {
+        QString str = "";
+        str.setNum(ui->tableWidget->columnCount());
+        ui->lineEdit_6->setText(str);
         return;
+    }
     if (is_ok) {
         int rows_i = ui->tableWidget->columnCount();
         if (val < rows_i) {
@@ -511,14 +515,23 @@ void MainWindow::on_lineEdit_6_editingFinished()
             }
         }
     }
+    else {
+        QString str = "";
+        str.setNum(ui->tableWidget->columnCount());
+        ui->lineEdit_6->setText(str);
+    }
 }
 
 void MainWindow::on_lineEdit_7_editingFinished()
 {
     bool is_ok = true;
     int val = ui->lineEdit_7->text().toInt(&is_ok);
-    if (val < 1)
+    if (val < 1 || val > 100) {
+        QString str = "";
+        str.setNum(ui->tableWidget_2->rowCount());
+        ui->lineEdit_7->setText(str);
         return;
+    }
     if (is_ok) {
         int rows_i = ui->tableWidget_2->rowCount();
         if (val < rows_i) {
@@ -534,14 +547,23 @@ void MainWindow::on_lineEdit_7_editingFinished()
             }
         }
     }
+    else {
+        QString str = "";
+        str.setNum(ui->tableWidget_2->rowCount());
+        ui->lineEdit_7->setText(str);
+    }
 }
 
 void MainWindow::on_lineEdit_8_editingFinished()
 {
     bool is_ok = true;
     int val = ui->lineEdit_8->text().toInt(&is_ok);
-    if (val < 1)
+    if (val < 1 || val > 100) {
+        QString str = "";
+        str.setNum(ui->tableWidget_2->columnCount());
+        ui->lineEdit_8->setText(str);
         return;
+    }
     if (is_ok) {
         int rows_i = ui->tableWidget_2->columnCount();
         if (val < rows_i) {
@@ -556,6 +578,11 @@ void MainWindow::on_lineEdit_8_editingFinished()
                 ui->tableWidget_2->setColumnCount(val);
             }
         }
+    }
+    else {
+        QString str = "";
+        str.setNum(ui->tableWidget_2->columnCount());
+        ui->lineEdit_8->setText(str);
     }
 }
 
