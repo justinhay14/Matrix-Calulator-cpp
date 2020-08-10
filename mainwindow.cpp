@@ -793,5 +793,44 @@ void MainWindow::on_pushButton_17_clicked()
 
 void MainWindow::on_pushButton_16_clicked()
 {
-
+    int rowf = g_latest.get_rows();
+    if (rowf < 1)
+        return;
+    int rows_i = ui->tableWidget_2->rowCount();
+    if (rowf < rows_i) {
+        for (int i = rows_i; i > rowf; i--) {
+            ui->tableWidget_2->removeRow(i);
+            ui->tableWidget_2->setRowCount(rowf);
+        }
+    }
+    else if (rowf > rows_i) {
+        for (int i = rows_i + 1; i <= rowf; i++) {
+                ui->tableWidget_2->insertRow(i);
+                ui->tableWidget_2->setRowCount(rowf);
+        }
+    }
+    int colf = g_latest.get_columns();
+    if (colf < 1)
+        return;
+    int cols_i = ui->tableWidget_2->columnCount();
+    if (colf < rows_i) {
+        for (int i = cols_i; i > colf; i--) {
+            ui->tableWidget_2->removeColumn(i);
+            ui->tableWidget_2->setColumnCount(colf);
+        }
+    }
+    else if (colf > rows_i) {
+        for (int i = cols_i + 1; i <= colf; i++) {
+            ui->tableWidget_2->insertColumn(i);
+            ui->tableWidget_2->setColumnCount(colf);
+        }
+    }
+    for (int i = 0; i < rowf; i++) {
+        for (int j = 0; j < colf; j++) {
+            QString text = "";
+            text.setNum(g_latest.grid[i][j]);
+            QTableWidgetItem *item = new QTableWidgetItem(text);
+            ui->tableWidget_2->setItem(i, j, item);
+        }
+    }
 }
