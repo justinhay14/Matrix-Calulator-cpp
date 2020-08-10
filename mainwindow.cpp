@@ -3,7 +3,7 @@
 #include "Matrix.h"
 #include <iostream>
 
-Matrix *g_latest = NULL;
+Matrix g_latest = Matrix();
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -92,21 +92,21 @@ void MainWindow::on_pushButton_10_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Inverse(A) = \n" + to_string(answer) + "\n");
-        *g_latest = answer;
+        //g_latest = &answer;
     }
     else if (function.startsWith("Transpose")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).transpose();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Transpose(A) = \n" + to_string(answer) + "\n");
-        *g_latest = answer;
+        //g_latest = &answer;
     }
     else if (function.startsWith("Reduced Row Echelon Form")) {
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).rref();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("rref(A) = \n" + to_string(answer) + "\n");
-        *g_latest = answer;
+        //g_latest = &answer;
     }
 }
 

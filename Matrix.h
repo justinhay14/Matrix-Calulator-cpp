@@ -203,6 +203,23 @@ public:
             cout << endl;
         }
     }
+
+    void deposit(Matrix source) {
+        for (int i = 0; i < source.get_rows(); i++) {
+            grid[i].resize(source.get_columns());
+            grid[i].shrink_to_fit();
+        }
+        grid.resize(source.get_rows());
+        grid.shrink_to_fit();
+        rows = source.get_rows();
+        columns = source.get_columns();
+        for (int i = 0; i < source.get_rows(); i++) {
+            for (int j = 0; j < source.get_columns(); j++) {
+                grid[i][j] = source.grid[i][j];
+            }
+        }
+    }
+
     Matrix();
     Matrix(int rows, int columns, vector<vector<double>> grid);
     ~Matrix();
