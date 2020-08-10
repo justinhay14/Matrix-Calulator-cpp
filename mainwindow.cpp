@@ -3,7 +3,7 @@
 #include "Matrix.h"
 #include <iostream>
 
-Matrix g_latest = Matrix();
+Matrix g_latest;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -764,11 +764,14 @@ void MainWindow::on_pushButton_17_clicked()
             ui->tableWidget->setColumnCount(colf);
         }
     }
-    /*for (int i = 0; i < rowf; i++) {
+    for (int i = 0; i < rowf; i++) {
         for (int j = 0; j < colf; j++) {
-            ui->tableWidget.se
+            QString text = "";
+            text.setNum(g_latest.grid[i][j]);
+            QTableWidgetItem *item = new QTableWidgetItem(text);
+            ui->tableWidget->setItem(i, j, item);
         }
-    }*/
+    }
 }
 
 void MainWindow::on_pushButton_16_clicked()

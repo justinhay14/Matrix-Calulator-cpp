@@ -26,7 +26,7 @@ Matrix::~Matrix() {
     grid.shrink_to_fit();
 }
 
-int main() {
+/*int main() {
     vector<vector<double>> vect{{-3, 1, 2, 4}, {0, 0, 0, 0}};
     vector<vector<double>> vect1{{1, 2}, {3,4}, {5,6}, {7,8}};
     Matrix A = Matrix(2, 4,vect);
@@ -39,4 +39,4 @@ int main() {
     //C.~Matrix();
     //B.~Matrix();
     //cout << A.determinant() << endl;
-}
+}*/
