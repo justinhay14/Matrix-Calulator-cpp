@@ -23,14 +23,23 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
       <property name="widgetResizable">
        <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
       <widget class="QWidget" name="scrollAreaWidgetContents_4">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>0</y>
+         <x>1</x>
+         <y>1</y>
          <width>851</width>
          <height>646</height>
         </rect>
