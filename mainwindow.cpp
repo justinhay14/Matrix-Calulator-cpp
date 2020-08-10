@@ -160,18 +160,21 @@ void MainWindow::on_pushButton_12_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Inverse(B) = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("Transpose")) {
         Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).transpose();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Transpose(B) = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("Reduced Row Echelon Form")) {
         Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).rref();
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("rref(B) = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
 }
 
@@ -219,7 +222,9 @@ void MainWindow::on_pushButton_clicked()
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
             return;
         }
-        ui->textBrowser->insertPlainText("A + B = \n" + to_string(A.add(B)) + "\n");
+        Matrix answer = A.add(B);
+        ui->textBrowser->insertPlainText("A + B = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("A - B")) {
         if (ui->tableWidget->rowCount() != ui->tableWidget_2->rowCount()) {
@@ -228,7 +233,9 @@ void MainWindow::on_pushButton_clicked()
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
             return;
         }
-        ui->textBrowser->insertPlainText("A - B = \n" + to_string(A.subtract(B)) + "\n");
+        Matrix answer = A.subtract(B);
+        ui->textBrowser->insertPlainText("A - B = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("B - A")) {
         if (ui->tableWidget->rowCount() != ui->tableWidget_2->rowCount()) {
@@ -237,7 +244,9 @@ void MainWindow::on_pushButton_clicked()
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
             return;
         }
-        ui->textBrowser->insertPlainText("B - A = \n" + to_string(B.subtract(A)) + "\n");
+        Matrix answer = B.subtract(A);
+        ui->textBrowser->insertPlainText("B - A = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("AB")) {
         if (ui->tableWidget->columnCount() != ui->tableWidget_2->rowCount()) {
@@ -246,7 +255,9 @@ void MainWindow::on_pushButton_clicked()
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
             return;
         }
-        ui->textBrowser->insertPlainText("AB = \n" + to_string(A.multiply(B)) + "\n");
+        Matrix answer = A.multiply(B);
+        ui->textBrowser->insertPlainText("AB = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
     else if (function.startsWith("BA")) {
         if (ui->tableWidget->rowCount() != ui->tableWidget_2->columnCount()) {
@@ -255,7 +266,9 @@ void MainWindow::on_pushButton_clicked()
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
             return;
         }
-        ui->textBrowser->insertPlainText("BA = \n" + to_string(B.multiply(A)) + "\n");
+        Matrix answer = B.multiply(A);
+        ui->textBrowser->insertPlainText("BA = \n" + to_string(answer) + "\n");
+        g_latest.deposit(answer);
     }
 }
 // works
@@ -409,6 +422,7 @@ void MainWindow::on_pushButton_9_clicked()
     ui->textBrowser->setTextCursor(cursor);
     QString empty = "";
     ui->textBrowser->insertPlainText(empty.setNum(scalar) + "A = \n" + to_string(answer) + "\n");
+    g_latest.deposit(answer);
 }
 
 void MainWindow::on_pushButton_11_clicked()
@@ -449,6 +463,7 @@ void MainWindow::on_pushButton_11_clicked()
     empty.setNum(exp);
     empty = "^" + empty;
     ui->textBrowser->insertPlainText("A" + empty + " = \n" + to_string(answer) + "\n");
+    g_latest.deposit(answer);
 }
 
 void MainWindow::on_lineEdit_5_editingFinished()
@@ -581,6 +596,7 @@ void MainWindow::on_pushButton_14_clicked()
     empty.setNum(exp);
     empty = "^" + empty;
     ui->textBrowser->insertPlainText("B" + empty + " = \n" + to_string(answer) + "\n");
+    g_latest.deposit(answer);
 }
 
 void MainWindow::on_pushButton_13_clicked()
@@ -613,6 +629,7 @@ void MainWindow::on_pushButton_13_clicked()
     ui->textBrowser->setTextCursor(cursor);
     QString empty = "";
     ui->textBrowser->insertPlainText(empty.setNum(scalar) + "B = \n" + to_string(answer) + "\n");
+    g_latest.deposit(answer);
 }
 
 void MainWindow::on_tableWidget_cellChanged(int row, int column)
