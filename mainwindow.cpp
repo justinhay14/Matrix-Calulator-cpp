@@ -46,6 +46,7 @@ void MainWindow::on_pushButton_10_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid[i][j] = val;
@@ -56,6 +57,7 @@ void MainWindow::on_pushButton_10_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         if (ui->tableWidget->rowCount() == 1 && ui->tableWidget->columnCount() == 1) {
@@ -64,6 +66,7 @@ void MainWindow::on_pushButton_10_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("det(A) = " + spec_case + "\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         double answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).determinant();
@@ -72,12 +75,14 @@ void MainWindow::on_pushButton_10_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("det(A) = " + text + "\n\n");
+        g_latest.deposit(Matrix());
     }
     else if (function.startsWith("Inverse")) {
         if (ui->tableWidget->rowCount() != ui->tableWidget->columnCount()) {
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).inverse();
@@ -114,6 +119,7 @@ void MainWindow::on_pushButton_12_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid[i][j] = val;
@@ -124,6 +130,7 @@ void MainWindow::on_pushButton_12_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         if (ui->tableWidget_2->rowCount() == 1 && ui->tableWidget_2->columnCount() == 1) {
@@ -132,6 +139,7 @@ void MainWindow::on_pushButton_12_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("det(B) = " + spec_case + "\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         double answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).determinant();
@@ -140,12 +148,14 @@ void MainWindow::on_pushButton_12_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("det(B) = " + text + "\n\n");
+        g_latest.deposit(Matrix());
     }
     else if (function.startsWith("Inverse")) {
         if (ui->tableWidget_2->rowCount() != ui->tableWidget_2->columnCount()) {
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).inverse();
@@ -847,4 +857,9 @@ void MainWindow::on_pushButton_16_clicked()
             ui->tableWidget_2->setItem(i, j, item);
         }
     }
+}
+
+void MainWindow::on_pushButton_15_clicked()
+{
+    g_latest.deposit(Matrix());
 }

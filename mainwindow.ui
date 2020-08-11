@@ -191,7 +191,8 @@ border-color: rgb(0, 0, 0);</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>Clear</string>
