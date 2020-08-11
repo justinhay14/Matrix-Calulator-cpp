@@ -192,6 +192,7 @@ void MainWindow::on_pushButton_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid_a[i][j] = val;
@@ -208,6 +209,7 @@ void MainWindow::on_pushButton_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid_b[i][j] = val;
@@ -222,6 +224,7 @@ void MainWindow::on_pushButton_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         Matrix answer = A.add(B);
@@ -233,6 +236,7 @@ void MainWindow::on_pushButton_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         Matrix answer = A.subtract(B);
@@ -244,6 +248,7 @@ void MainWindow::on_pushButton_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         Matrix answer = B.subtract(A);
@@ -255,6 +260,7 @@ void MainWindow::on_pushButton_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         Matrix answer = A.multiply(B);
@@ -266,6 +272,7 @@ void MainWindow::on_pushButton_clicked()
             QTextCursor cursor = QTextCursor(ui->textBrowser->document());
             ui->textBrowser->setTextCursor(cursor);
             ui->textBrowser->insertPlainText("Error! Please enter in valid matrices for this operation\n\n");
+            g_latest.deposit(Matrix());
             return;
         }
         Matrix answer = B.multiply(A);
@@ -406,6 +413,7 @@ void MainWindow::on_pushButton_9_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid[i][j] = val;
@@ -417,6 +425,7 @@ void MainWindow::on_pushButton_9_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+        g_latest.deposit(Matrix());
         return;
     }
     Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).scalar_multiply(scalar);
@@ -433,6 +442,7 @@ void MainWindow::on_pushButton_11_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+        g_latest.deposit(Matrix());
         return;
     }
     QString function = ui->comboBox_2->currentText();
@@ -445,6 +455,7 @@ void MainWindow::on_pushButton_11_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid[i][j] = val;
@@ -456,6 +467,7 @@ void MainWindow::on_pushButton_11_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+        g_latest.deposit(Matrix());
         return;
     }
     Matrix answer = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid).power(exp);
@@ -602,6 +614,7 @@ void MainWindow::on_pushButton_14_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Error! Please enter in valid matrix for this operation\n\n");
+        g_latest.deposit(Matrix());
         return;
     }
     QString function = ui->comboBox_2->currentText();
@@ -614,6 +627,7 @@ void MainWindow::on_pushButton_14_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid[i][j] = val;
@@ -625,6 +639,7 @@ void MainWindow::on_pushButton_14_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+        g_latest.deposit(Matrix());
         return;
     }
     Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).power(exp);
@@ -649,6 +664,7 @@ void MainWindow::on_pushButton_13_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid[i][j] = val;
@@ -660,6 +676,7 @@ void MainWindow::on_pushButton_13_clicked()
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
         ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+        g_latest.deposit(Matrix());
         return;
     }
     Matrix answer = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid).scalar_multiply(scalar);
@@ -681,6 +698,7 @@ void MainWindow::on_pushButton_2_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid_a[i][j] = val;
@@ -697,6 +715,7 @@ void MainWindow::on_pushButton_2_clicked()
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                g_latest.deposit(Matrix());
                 return;
             }
             grid_b[i][j] = val;
