@@ -793,8 +793,12 @@ void MainWindow::on_pushButton_2_clicked()
 void MainWindow::on_pushButton_17_clicked()
 {
     int rowf = g_latest.get_rows();
-    if (rowf < 1)
+    if (rowf < 1) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! You are trying to insert a non-matrix into A\n\n");
         return;
+    }
     int rows_i = ui->tableWidget->rowCount();
     if (rowf < rows_i) {
         for (int i = rows_i; i > rowf; i--) {
@@ -809,8 +813,12 @@ void MainWindow::on_pushButton_17_clicked()
         }
     }
     int colf = g_latest.get_columns();
-    if (colf < 1)
+    if (colf < 1) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! You are trying to insert a non-matrix into A\n\n");
         return;
+    }
     int cols_i = ui->tableWidget->columnCount();
     if (colf < rows_i) {
         for (int i = cols_i; i > colf; i--) {
@@ -837,8 +845,12 @@ void MainWindow::on_pushButton_17_clicked()
 void MainWindow::on_pushButton_16_clicked()
 {
     int rowf = g_latest.get_rows();
-    if (rowf < 1)
+    if (rowf < 1) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! You are trying to insert a non-matrix into B\n\n");
         return;
+    }
     int rows_i = ui->tableWidget_2->rowCount();
     if (rowf < rows_i) {
         for (int i = rows_i; i > rowf; i--) {
@@ -853,8 +865,12 @@ void MainWindow::on_pushButton_16_clicked()
         }
     }
     int colf = g_latest.get_columns();
-    if (colf < 1)
+    if (colf < 1) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! You are trying to insert a non-matrix into B\n\n");
         return;
+    }
     int cols_i = ui->tableWidget_2->columnCount();
     if (colf < rows_i) {
         for (int i = cols_i; i > colf; i--) {
