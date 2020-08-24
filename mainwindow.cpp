@@ -695,13 +695,16 @@ void MainWindow::on_pushButton_2_clicked()
             bool satis = true;
             double val = ui->tableWidget->item(i, j)->text().toDouble(&satis);
             if (!satis) {
-                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                /*QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
                 g_latest.deposit(Matrix());
-                return;
+                return;*/
+                grid_a[i][j] = NULL;
             }
-            grid_a[i][j] = val;
+            else {
+                grid_a[i][j] = val;
+            }
         }
     }
     Matrix A = Matrix(ui->tableWidget->rowCount(), ui->tableWidget->columnCount(), grid_a);
@@ -712,13 +715,16 @@ void MainWindow::on_pushButton_2_clicked()
             bool satis = true;
             double val = ui->tableWidget_2->item(i, j)->text().toDouble(&satis);
             if (!satis) {
-                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                /*QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
                 g_latest.deposit(Matrix());
-                return;
+                return;*/
+                grid_b[i][j] = NULL;
             }
-            grid_b[i][j] = val;
+            else {
+                grid_b[i][j] = val;
+            }
         }
     }
     Matrix B = Matrix(ui->tableWidget_2->rowCount(), ui->tableWidget_2->columnCount(), grid_b);
@@ -768,7 +774,9 @@ void MainWindow::on_pushButton_2_clicked()
     for (int i = 0; i < B.get_rows(); i++) {
         for (int j = 0; j < B.get_columns(); j++) {
             QString text = "";
-            text.setNum(grid_b[i][j]);
+            if (grid_b[i][j] != NULL) {
+                text.setNum(grid_b[i][j]);
+            }
             QTableWidgetItem *item = new QTableWidgetItem(text);
             ui->tableWidget->setItem(i, j, item);
         }
@@ -777,7 +785,9 @@ void MainWindow::on_pushButton_2_clicked()
     for (int i = 0; i < A.get_rows(); i++) {
         for (int j = 0; j < A.get_columns(); j++) {
             QString text = "";
-            text.setNum(grid_a[i][j]);
+            if (grid_a[i][j] != NULL) {
+                text.setNum(grid_a[i][j]);
+            }
             QTableWidgetItem *item = new QTableWidgetItem(text);
             ui->tableWidget_2->setItem(i, j, item);
         }
