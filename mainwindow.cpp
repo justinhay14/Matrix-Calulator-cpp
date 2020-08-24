@@ -466,7 +466,7 @@ void MainWindow::on_pushButton_11_clicked()
     if (!ok) {
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
-        ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+        ui->textBrowser->insertPlainText("Error! Please enter a valid exponent! (only whole numbers are supported)\n\n");
         g_latest.deposit(Matrix());
         return;
     }
@@ -638,7 +638,7 @@ void MainWindow::on_pushButton_14_clicked()
     if (!ok) {
         QTextCursor cursor = QTextCursor(ui->textBrowser->document());
         ui->textBrowser->setTextCursor(cursor);
-        ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+        ui->textBrowser->insertPlainText("Error! Please enter a valid exponent! (only whole numbers are supported)\n\n");
         g_latest.deposit(Matrix());
         return;
     }
