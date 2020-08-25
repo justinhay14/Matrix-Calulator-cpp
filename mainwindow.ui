@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>855</width>
-    <height>758</height>
+    <width>858</width>
+    <height>805</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,7 @@
     <property name="bottomMargin">
      <number>2</number>
     </property>
-    <item row="0" column="0">
+    <item row="0" column="1">
      <widget class="QScrollArea" name="scrollArea">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -44,9 +44,6 @@
       <property name="frameShape">
        <enum>QFrame::NoFrame</enum>
       </property>
-      <property name="widgetResizable">
-       <bool>false</bool>
-      </property>
       <property name="alignment">
        <set>Qt::AlignHCenter|Qt::AlignTop</set>
       </property>
@@ -55,8 +52,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>851</width>
-         <height>734</height>
+         <width>854</width>
+         <height>781</height>
         </rect>
        </property>
        <widget class="QLabel" name="label">
@@ -89,7 +86,7 @@
         <property name="geometry">
          <rect>
           <x>70</x>
-          <y>430</y>
+          <y>480</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -151,7 +148,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>300</y>
+          <y>330</y>
           <width>121</width>
           <height>22</height>
          </rect>
@@ -185,7 +182,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>390</x>
-          <y>700</y>
+          <y>750</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -202,7 +199,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>150</x>
-          <y>360</y>
+          <y>390</y>
           <width>21</width>
           <height>20</height>
          </rect>
@@ -221,7 +218,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>170</x>
-          <y>300</y>
+          <y>330</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -238,7 +235,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>700</x>
-          <y>330</y>
+          <y>360</y>
           <width>21</width>
           <height>20</height>
          </rect>
@@ -311,7 +308,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>360</y>
+          <y>390</y>
           <width>101</width>
           <height>23</height>
          </rect>
@@ -328,7 +325,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>160</x>
-          <y>430</y>
+          <y>480</y>
           <width>541</width>
           <height>261</height>
          </rect>
@@ -354,7 +351,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>720</x>
-          <y>300</y>
+          <y>330</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -371,7 +368,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>700</x>
-          <y>360</y>
+          <y>390</y>
           <width>21</width>
           <height>20</height>
          </rect>
@@ -390,7 +387,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>40</x>
-          <y>330</y>
+          <y>360</y>
           <width>81</width>
           <height>23</height>
          </rect>
@@ -407,7 +404,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>150</x>
-          <y>330</y>
+          <y>360</y>
           <width>21</width>
           <height>20</height>
          </rect>
@@ -426,7 +423,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>590</x>
-          <y>360</y>
+          <y>390</y>
           <width>101</width>
           <height>23</height>
          </rect>
@@ -545,7 +542,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>720</x>
-          <y>430</y>
+          <y>480</y>
           <width>75</width>
           <height>23</height>
          </rect>
@@ -562,7 +559,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>590</x>
-          <y>300</y>
+          <y>330</y>
           <width>121</width>
           <height>22</height>
          </rect>
@@ -730,7 +727,7 @@ border-color: rgb(0, 0, 0);</string>
         <property name="geometry">
          <rect>
           <x>590</x>
-          <y>330</y>
+          <y>360</y>
           <width>81</width>
           <height>23</height>
          </rect>
@@ -1065,6 +1062,84 @@ border-color: rgb(0, 0, 0);</string>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
+       </widget>
+       <widget class="QFrame" name="frame">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>290</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLineEdit" name="lineEdit_9">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>10</y>
+           <width>21</width>
+           <height>20</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_18">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>75</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Fill</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="frame_2">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>290</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLineEdit" name="lineEdit_10">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>10</y>
+           <width>21</width>
+           <height>20</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_19">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>75</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Fill</string>
+         </property>
+        </widget>
        </widget>
       </widget>
      </widget>
