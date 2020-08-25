@@ -687,6 +687,23 @@ void MainWindow::on_pushButton_13_clicked()
     g_latest.deposit(answer);
 }
 
+bool is_zero_double(QString text) {
+    int period_count = 0;
+    for (int i = 0; i < text.length(); i++) {
+        QChar period = QChar('.');
+        QChar zero = QChar('0');
+        if (text.data()[i] == period) {
+            period_count++;
+        }
+        else if (text.data()[i] != zero) {
+            return false;
+        }
+    }
+    if (period_count > 1)
+        return false;
+    return true;
+}
+
 void MainWindow::on_pushButton_2_clicked()
 {
     vector<vector<double>> grid_a (ui->tableWidget->rowCount(), vector<double>(ui->tableWidget->columnCount(), 0));
@@ -695,12 +712,12 @@ void MainWindow::on_pushButton_2_clicked()
             bool satis = true;
             double val = ui->tableWidget->item(i, j)->text().toDouble(&satis);
             if (!satis) {
-                /*QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
                 g_latest.deposit(Matrix());
-                return;*/
-                grid_a[i][j] = NULL;
+                return;
+                //grid_a[i][j] = NULL;
             }
             else {
                 grid_a[i][j] = val;
@@ -715,12 +732,12 @@ void MainWindow::on_pushButton_2_clicked()
             bool satis = true;
             double val = ui->tableWidget_2->item(i, j)->text().toDouble(&satis);
             if (!satis) {
-                /*QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+                QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
                 g_latest.deposit(Matrix());
-                return;*/
-                grid_b[i][j] = NULL;
+                return;
+                //grid_b[i][j] = NULL;
             }
             else {
                 grid_b[i][j] = val;
@@ -774,9 +791,9 @@ void MainWindow::on_pushButton_2_clicked()
     for (int i = 0; i < B.get_rows(); i++) {
         for (int j = 0; j < B.get_columns(); j++) {
             QString text = "";
-            if (grid_b[i][j] != NULL) {
+            //if (grid_b[i][j] != NULL) {
                 text.setNum(grid_b[i][j]);
-            }
+            //}
             QTableWidgetItem *item = new QTableWidgetItem(text);
             ui->tableWidget->setItem(i, j, item);
         }
@@ -785,9 +802,9 @@ void MainWindow::on_pushButton_2_clicked()
     for (int i = 0; i < A.get_rows(); i++) {
         for (int j = 0; j < A.get_columns(); j++) {
             QString text = "";
-            if (grid_a[i][j] != NULL) {
+            //if (grid_a[i][j] != NULL) {
                 text.setNum(grid_a[i][j]);
-            }
+            //}
             QTableWidgetItem *item = new QTableWidgetItem(text);
             ui->tableWidget_2->setItem(i, j, item);
         }
@@ -925,6 +942,26 @@ void MainWindow::on_pushButton_18_clicked()
             text.setNum(val);
             QTableWidgetItem *item = new QTableWidgetItem(text);
             ui->tableWidget->setItem(i, j, item);
+        }
+    }
+}
+
+void MainWindow::on_pushButton_19_clicked()
+{
+    bool satis = true;
+    double val = ui->lineEdit_10->text().toDouble(&satis);
+    if (!satis) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! Please enter a valid number in the fill box\n\n");
+        return;
+    }
+    for (int i = 0; i < ui->tableWidget_2->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget_2->columnCount(); j++) {
+            QString text = "";
+            text.setNum(val);
+            QTableWidgetItem *item = new QTableWidgetItem(text);
+            ui->tableWidget_2->setItem(i, j, item);
         }
     }
 }
