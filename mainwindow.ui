@@ -1087,6 +1087,15 @@ border-color: rgb(0, 0, 0);</string>
            <height>20</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(245, 245, 245);</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
         </widget>
         <widget class="QPushButton" name="pushButton_18">
          <property name="geometry">
@@ -1096,6 +1105,10 @@ border-color: rgb(0, 0, 0);</string>
            <width>75</width>
            <height>21</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string>Fill</string>
@@ -1126,6 +1139,15 @@ border-color: rgb(0, 0, 0);</string>
            <height>20</height>
           </rect>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(245, 245, 245);</string>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+         <property name="frame">
+          <bool>false</bool>
+         </property>
         </widget>
         <widget class="QPushButton" name="pushButton_19">
          <property name="geometry">
@@ -1135,6 +1157,10 @@ border-color: rgb(0, 0, 0);</string>
            <width>75</width>
            <height>21</height>
           </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(199, 199, 199);
+border-color: rgb(0, 0, 0);</string>
          </property>
          <property name="text">
           <string>Fill</string>
