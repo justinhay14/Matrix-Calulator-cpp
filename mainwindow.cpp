@@ -908,3 +908,23 @@ void MainWindow::on_pushButton_15_clicked()
 {
     g_latest.deposit(Matrix());
 }
+
+void MainWindow::on_pushButton_18_clicked()
+{
+    bool satis = true;
+    double val = ui->lineEdit_9->text().toDouble(&satis);
+    if (!satis) {
+        QTextCursor cursor = QTextCursor(ui->textBrowser->document());
+        ui->textBrowser->setTextCursor(cursor);
+        ui->textBrowser->insertPlainText("Error! Please enter a valid number in the fill box\n\n");
+        return;
+    }
+    for (int i = 0; i < ui->tableWidget->rowCount(); i++) {
+        for (int j = 0; j < ui->tableWidget->columnCount(); j++) {
+            QString text = "";
+            text.setNum(val);
+            QTableWidgetItem *item = new QTableWidgetItem(text);
+            ui->tableWidget->setItem(i, j, item);
+        }
+    }
+}
