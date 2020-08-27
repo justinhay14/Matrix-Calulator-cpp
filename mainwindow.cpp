@@ -280,7 +280,7 @@ void MainWindow::on_pushButton_clicked()
         g_latest.deposit(answer);
     }
 }
-// works
+
 void MainWindow::on_pushButton_5_clicked()
 {
     if (ui->tableWidget->columnCount() == ui->tableWidget->rowCount()) {
@@ -308,7 +308,7 @@ void MainWindow::on_pushButton_5_clicked()
     new_columns.setNum(ui->tableWidget->columnCount());
     ui->lineEdit_6->setText(new_columns);
 }
-// works
+
 void MainWindow::on_pushButton_6_clicked()
 {
     if (ui->tableWidget->columnCount() == ui->tableWidget->rowCount()) {
@@ -340,7 +340,7 @@ void MainWindow::on_pushButton_6_clicked()
     new_columns.setNum(ui->tableWidget->columnCount());
     ui->lineEdit_6->setText(new_columns);
 }
-// works
+
 void MainWindow::on_pushButton_7_clicked()
 {
     if (ui->tableWidget_2->columnCount() == ui->tableWidget_2->rowCount()) {
@@ -368,7 +368,7 @@ void MainWindow::on_pushButton_7_clicked()
     new_columns.setNum(ui->tableWidget_2->columnCount());
     ui->lineEdit_8->setText(new_columns);
 }
-// works
+
 void MainWindow::on_pushButton_8_clicked()
 {
     if (ui->tableWidget_2->columnCount() == ui->tableWidget_2->rowCount()) {
@@ -400,7 +400,7 @@ void MainWindow::on_pushButton_8_clicked()
     new_columns.setNum(ui->tableWidget_2->columnCount());
     ui->lineEdit_8->setText(new_columns);
 }
-// works
+
 void MainWindow::on_pushButton_9_clicked()
 {
     QString function = ui->comboBox_2->currentText();
@@ -717,7 +717,6 @@ void MainWindow::on_pushButton_2_clicked()
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
                 g_latest.deposit(Matrix());
                 return;
-                //grid_a[i][j] = NULL;
             }
             else {
                 grid_a[i][j] = val;
@@ -737,7 +736,6 @@ void MainWindow::on_pushButton_2_clicked()
                 ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
                 g_latest.deposit(Matrix());
                 return;
-                //grid_b[i][j] = NULL;
             }
             else {
                 grid_b[i][j] = val;
@@ -791,9 +789,7 @@ void MainWindow::on_pushButton_2_clicked()
     for (int i = 0; i < B.get_rows(); i++) {
         for (int j = 0; j < B.get_columns(); j++) {
             QString text = "";
-            //if (grid_b[i][j] != NULL) {
-                text.setNum(grid_b[i][j]);
-            //}
+            text.setNum(grid_b[i][j]);
             QTableWidgetItem *item = new QTableWidgetItem(text);
             ui->tableWidget->setItem(i, j, item);
         }
@@ -802,9 +798,7 @@ void MainWindow::on_pushButton_2_clicked()
     for (int i = 0; i < A.get_rows(); i++) {
         for (int j = 0; j < A.get_columns(); j++) {
             QString text = "";
-            //if (grid_a[i][j] != NULL) {
-                text.setNum(grid_a[i][j]);
-            //}
+            text.setNum(grid_a[i][j]);
             QTableWidgetItem *item = new QTableWidgetItem(text);
             ui->tableWidget_2->setItem(i, j, item);
         }
