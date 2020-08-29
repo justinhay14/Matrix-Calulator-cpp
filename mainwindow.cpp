@@ -45,7 +45,7 @@ void MainWindow::on_pushButton_10_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the A table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
@@ -118,7 +118,7 @@ void MainWindow::on_pushButton_12_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the B table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
@@ -191,7 +191,7 @@ void MainWindow::on_pushButton_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the A table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
@@ -208,7 +208,7 @@ void MainWindow::on_pushButton_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the B table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
@@ -412,7 +412,7 @@ void MainWindow::on_pushButton_9_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the A table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
@@ -454,7 +454,7 @@ void MainWindow::on_pushButton_11_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the A table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
@@ -626,7 +626,7 @@ void MainWindow::on_pushButton_14_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the B table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
@@ -663,7 +663,7 @@ void MainWindow::on_pushButton_13_clicked()
             if (!satis) {
                 QTextCursor cursor = QTextCursor(ui->textBrowser->document());
                 ui->textBrowser->setTextCursor(cursor);
-                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the table\n\n");
+                ui->textBrowser->insertPlainText("Error! Please enter in valid numbers in the B table\n\n");
                 g_latest.deposit(Matrix());
                 return;
             }
